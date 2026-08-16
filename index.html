@@ -104,6 +104,10 @@
   .h-chip4:hover{border-color:rgba(22,33,31,.4)}
   .lm-spec{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(22,33,31,.8);background:rgba(23,133,192,.07);border:1px solid rgba(23,133,192,.16);padding:9px 15px;border-radius:999px}
   .lm-spec::before{content:"";width:6px;height:6px;border-radius:50%;background:#1785C0;flex:none}
+  .hdr-logo{height:clamp(46px,5.4vw,58px);width:auto;display:block}
+  #site-header .logo-color{display:none}
+  #site-header.scrolled .logo-color{display:block}
+  #site-header.scrolled .logo-inverse{display:none}
 
   /* Sélecteur de langue */
   #lang-switch{padding:5px 11px;border-radius:999px;background:rgba(9,30,43,.34);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);transition:background .35s ease,box-shadow .35s ease}
@@ -138,10 +142,8 @@
 <!-- ===== HEADER ===== -->
 <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(20px,5vw,64px);transition:background .4s ease,box-shadow .4s ease,padding .4s ease,color .4s ease;color:#fff">
   <a id="brand-home" href="#" style="display:flex;align-items:center;gap:clamp(9px,1.4vw,14px);text-decoration:none;color:inherit;cursor:pointer">
-    <div id="wm-block" style="line-height:1">
-      <div id="wm" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(19px,2.1vw,23px);letter-spacing:.01em;transition:color .4s ease">Les pieds dans l'<span style="font-style:italic;font-weight:400">eau</span></div>
-      <div id="wm-sub" style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.82;margin-top:3px;transition:color .4s ease">Andilana · Nosy Be</div>
-    </div>
+    <img class="hdr-logo logo-inverse" src="images/logo-inverse.webp" alt="Lune de Miel & Antenéus — Andilana, Nosy Be" width="300" height="300">
+    <img class="hdr-logo logo-color" src="images/logo-color.webp" alt="Lune de Miel & Antenéus — Andilana, Nosy Be" width="300" height="300">
   </a>
   <div style="display:flex;align-items:center;gap:clamp(10px,2vw,18px)">
     <div id="lang-switch" style="display:flex;align-items:center;gap:3px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em">
@@ -365,6 +367,7 @@
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px">
       <a href="#contact" class="h-cta" data-wa="ant" style="display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;box-shadow:0 16px 38px -16px rgba(10,20,19,.45);transition:background .25s ease,transform .25s ease"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.1 7.5L3 20.5l1.6-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>Réserver Antenéus</a>
+      <a href="https://rentanoo.com/hebergement/9F1D55F9" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(242,194,48,.75);background:rgba(242,194,48,.12);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:8px;height:8px;border-radius:50%;background:#F2C230"></span>Rentanoo · <span style="color:#C9971A;font-weight:700">Meilleur tarif</span></a>
       <a href="https://www.airbnb.fr/rooms/1739253106573914156" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(22,33,31,.18);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:7px;height:7px;border-radius:50%;background:#E8622B"></span>Airbnb</a>
       <a href="https://www.booking.com/hotel/mg/villa-anteneus-andilana-nosy-be.fr.html" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(22,33,31,.18);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
     </div>
@@ -516,7 +519,7 @@
     <footer style="margin-top:clamp(40px,5vw,64px)">
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(22,33,31,.1)">
         <div>
-          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:24px;line-height:1;margin-bottom:10px">Les pieds dans l'<span style="font-style:italic;font-weight:400">eau</span></div>
+          <img src="images/logo-color.webp" alt="Lune de Miel & Antenéus" width="300" height="300" style="height:82px;width:auto;display:block;margin-bottom:12px">
           <div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(22,33,31,.5)">Andilana · Nosy Be · Madagascar</div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:22px;font-size:14px">
