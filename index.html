@@ -421,21 +421,21 @@
   <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(36px,5vw,80px);align-items:center">
     <div data-reveal style="position:relative;max-width:410px">
       <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -28px rgba(10,20,19,.32)">
-        <!-- Portrait de Chris à fournir : remplacer ce bloc par <img class="slot" loading="lazy" decoding="async" src="images/chris.webp" alt="Chris, votre hôte"> -->
-        <img class="slot" loading="lazy" decoding="async" src="images/chris-v2.webp" alt="Chris, votre hôte" style="width:100%;height:100%;object-fit:cover">
+        <!-- Portrait d'Alicia, la gouvernante des résidences -->
+        <img class="slot" loading="lazy" decoding="async" src="images/alicia.webp" alt="Alicia, votre gouvernante" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div style="position:absolute;left:-14px;bottom:24px;background:#fff;color:#16211F;padding:13px 20px;border-radius:12px;box-shadow:0 18px 40px -16px rgba(10,20,19,.28)">
-        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:21px;line-height:1">Chris</div>
-        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#1785C0;margin-top:5px">Votre hôte · Rentanoo</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:21px;line-height:1">Alicia</div>
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#1785C0;margin-top:5px">Votre gouvernante</div>
       </div>
     </div>
     <div data-reveal>
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px"><span style="width:34px;height:2px;background:#E8622B;border-radius:2px"></span><span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#E8622B">Votre séjour, en direct</span></div>
-      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,52px);line-height:1.06;letter-spacing:-.01em;margin:0 0 24px;color:#16211F" id="host-h2">Bonjour, c'est <span style="font-style:italic;font-weight:400">Chris</span>.</h2>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px"><span style="width:34px;height:2px;background:#E8622B;border-radius:2px"></span><span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#E8622B">Sur place, à votre service</span></div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,52px);line-height:1.06;letter-spacing:-.01em;margin:0 0 24px;color:#16211F" id="host-h2">Bonjour, c'est <span style="font-style:italic;font-weight:400">Alicia</span>.</h2>
       <div style="font-size:16.5px;line-height:1.72;color:rgba(22,33,31,.72);max-width:50ch;display:flex;flex-direction:column;gap:16px">
-        <p style="margin:0">Bonjour, moi c'est Chris. Je vis à Nosy Be et je gère ces deux logements — ainsi que d'autres pépites de l'île — via Rentanoo.</p>
-        <p style="margin:0">Lune de Miel et Antenéus, dans la même propriété les pieds dans l'eau à Andilana, c'est un vrai coup de cœur : la piscine face au lagon, le calme et le service qui va avec.</p>
-        <p style="margin:0">Quand tu réserves ici, tu me parles directement. Je réponds vite, je connais l'île par cœur, et je serai là pour rendre ton séjour simple et sans souci.</p>
+        <p style="margin:0">Bonjour, moi c'est Alicia, la gouvernante des résidences. C'est moi qui veille sur votre logement et qui m'occupe de vous pendant tout votre séjour.</p>
+        <p style="margin:0">Ménage, linge, petites attentions au quotidien : je fais en sorte que tout soit impeccable, pour que vous n'ayez qu'à profiter, l'esprit tranquille.</p>
+        <p style="margin:0">Une question ou un besoin sur place ? Je reste disponible et à votre écoute, pour rendre votre séjour simple et agréable.</p>
       </div>
       <a href="#contact" class="h-cta" style="margin-top:30px;display:inline-flex;align-items:center;gap:11px;padding:16px 28px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;box-shadow:0 16px 38px -16px rgba(10,20,19,.45);transition:background .25s ease,transform .25s ease">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.1 7.5L3 20.5l1.6-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>
@@ -577,6 +577,11 @@
     (function () {
       var T = {
         "Partager sur Facebook": { it: "Condividi su Facebook", en: "Share on Facebook" },
+        "Sur place, à votre service": { it: "Sul posto, al vostro servizio", en: "On-site, at your service" },
+        "Votre gouvernante": { it: "La vostra governante", en: "Your housekeeper" },
+        "Bonjour, moi c'est Alicia, la gouvernante des résidences. C'est moi qui veille sur votre logement et qui m'occupe de vous pendant tout votre séjour.": { it: "Ciao, io sono Alicia, la governante delle residenze. Sono io che mi prendo cura del vostro alloggio e di voi per tutto il soggiorno.", en: "Hi, I'm Alicia, the housekeeper of the residences. I'm the one who looks after your accommodation and takes care of you throughout your stay." },
+        "Ménage, linge, petites attentions au quotidien : je fais en sorte que tout soit impeccable, pour que vous n'ayez qu'à profiter, l'esprit tranquille.": { it: "Pulizie, biancheria, piccole attenzioni quotidiane: faccio in modo che tutto sia impeccabile, così dovete solo godervi il soggiorno, in tutta tranquillità.", en: "Cleaning, linen, little daily touches: I make sure everything is spotless, so you can simply relax and enjoy, worry-free." },
+        "Une question ou un besoin sur place ? Je reste disponible et à votre écoute, pour rendre votre séjour simple et agréable.": { it: "Una domanda o un bisogno sul posto? Resto disponibile e all'ascolto, per rendere il vostro soggiorno semplice e piacevole.", en: "A question or something you need on-site? I'm always available and happy to help, to make your stay easy and pleasant." },
         "Deux logements indépendants": { it: "Due alloggi indipendenti", en: "Two independent stays" },
         "Découvrir les 2 logements": { it: "Scopri i 2 alloggi", en: "Discover both stays" },
         "La propriété": { it: "La proprietà", en: "The property" },
@@ -742,7 +747,7 @@
       var UL = "<span style='position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:2px;background:#F2C230;transform-origin:left;transform:scaleX(0);animation:drawLine 1s 1.1s cubic-bezier(.7,0,.3,1) forwards'></span>";
       function emp(w) { return "<span style='position:relative;white-space:nowrap;font-weight:400;font-style:italic'>" + w + UL + "</span>"; }
       var titleHtml = { fr: "Andilana, les pieds dans l'" + emp("eau") + ".", it: "Andilana, con i piedi nell'" + emp("acqua") + ".", en: "Andilana, right by the " + emp("water") + "." };
-      var hostHtml = { fr: "Bonjour, c'est <span style='font-style:italic;font-weight:400'>Chris</span>.", it: "Ciao, sono <span style='font-style:italic;font-weight:400'>Chris</span>.", en: "Hi, I'm <span style='font-style:italic;font-weight:400'>Chris</span>." };
+      var hostHtml = { fr: "Bonjour, c'est <span style='font-style:italic;font-weight:400'>Alicia</span>.", it: "Ciao, sono <span style='font-style:italic;font-weight:400'>Alicia</span>.", en: "Hi, I'm <span style='font-style:italic;font-weight:400'>Alicia</span>." };
       var WA_NUM = "261373437912";
       var waMsg = {
         gen:  { fr: "Bonjour, je suis intéressé(e) par un séjour à Andilana (Nosy Be). Pouvez-vous me renseigner ?", it: "Buongiorno, sono interessato/a a un soggiorno ad Andilana (Nosy Be). Potete darmi informazioni?", en: "Hello, I'm interested in a stay in Andilana (Nosy Be). Could you tell me more?" },
