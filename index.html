@@ -422,7 +422,7 @@
     <div data-reveal style="position:relative;max-width:410px">
       <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -28px rgba(10,20,19,.32)">
         <!-- Portrait d'Alicia, la gouvernante des résidences -->
-        <img class="slot" loading="lazy" decoding="async" src="images/alicia.webp" alt="Alicia, votre gouvernante" style="width:100%;height:100%;object-fit:cover">
+        <img class="slot" loading="lazy" decoding="async" src="images/alicia-v2.webp" alt="Alicia, votre gouvernante, devant la plaque Lune de Miel" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div style="position:absolute;left:-14px;bottom:24px;background:#fff;color:#16211F;padding:13px 20px;border-radius:12px;box-shadow:0 18px 40px -16px rgba(10,20,19,.28)">
         <div style="font-family:'Fraunces',serif;font-style:italic;font-size:21px;line-height:1">Alicia</div>
@@ -475,6 +475,28 @@
         <a href="#contact" class="h-chip2" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;border:1px solid rgba(251,251,249,.18);color:#fff;font-size:13.5px;font-weight:600;transition:border-color .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
       </div>
       <p style="font-size:12.5px;line-height:1.5;color:rgba(251,251,249,.45);margin:18px 0 0;text-align:center">Avis vérifiés et paiement protégé sur les plateformes · annulation flexible selon la période.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVIS CLIENT ===== -->
+<section aria-label="Avis client" style="background:#fbfbf9;padding:clamp(64px,9vw,110px) clamp(20px,5vw,64px);border-top:1px solid rgba(22,33,31,.07)">
+  <div data-reveal style="max-width:820px;margin:0 auto;text-align:center">
+    <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:18px">Avis client</div>
+    <div style="display:flex;justify-content:center;gap:5px;margin-bottom:24px" role="img" aria-label="Note 5 sur 5">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2C230"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2C230"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2C230"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2C230"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2C230"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    </div>
+    <blockquote style="font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(24px,3.4vw,40px);line-height:1.32;letter-spacing:-.01em;margin:0 0 28px;color:#16211F">« La villa était conforme aux photos, le service au top ! Je recommande. »</blockquote>
+    <div style="display:inline-flex;align-items:center;gap:13px">
+      <div style="width:46px;height:46px;border-radius:50%;background:#1785C0;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:19px;flex:none">C</div>
+      <div style="text-align:left">
+        <div style="font-weight:600;font-size:15.5px;color:#16211F">LACAILLE Christophe</div>
+        <div style="font-size:13px;color:rgba(22,33,31,.55)"><span>Séjour du 1er au 7 août 2026</span> · <span style="color:#1785C0;font-weight:600">Avis vérifié</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -577,6 +599,10 @@
     (function () {
       var T = {
         "Partager sur Facebook": { it: "Condividi su Facebook", en: "Share on Facebook" },
+        "Avis client": { it: "Recensione cliente", en: "Guest review" },
+        "« La villa était conforme aux photos, le service au top ! Je recommande. »": { it: "« La villa era conforme alle foto, servizio al top! La consiglio. »", en: "“The villa matched the photos, top-notch service! Highly recommend.”" },
+        "Séjour du 1er au 7 août 2026": { it: "Soggiorno dal 1° al 7 agosto 2026", en: "Stayed 1–7 August 2026" },
+        "Avis vérifié": { it: "Recensione verificata", en: "Verified review" },
         "Sur place, à votre service": { it: "Sul posto, al vostro servizio", en: "On-site, at your service" },
         "Votre gouvernante": { it: "La vostra governante", en: "Your housekeeper" },
         "Bonjour, moi c'est Alicia, la gouvernante des résidences. C'est moi qui veille sur votre logement et qui m'occupe de vous pendant tout votre séjour.": { it: "Ciao, io sono Alicia, la governante delle residenze. Sono io che mi prendo cura del vostro alloggio e di voi per tutto il soggiorno.", en: "Hi, I'm Alicia, the housekeeper of the residences. I'm the one who looks after your accommodation and takes care of you throughout your stay." },
