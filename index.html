@@ -1004,7 +1004,8 @@
 (function(){
   var form=document.getElementById('resa-form'); if(!form) return;
   var msg=document.getElementById('resa-msg');
-  var WEBHOOK='https://n8n.srv1285649.hstgr.cloud/webhook/villa-reservation';
+  var WEBHOOK='https://n8n.srv1285649.hstgr.cloud/webhook/reservation';
+  var SITE='villa-lune-de-miel';
   var today=new Date().toISOString().slice(0,10);
   var arr=form.querySelector('[name=arrivee]'), dep=form.querySelector('[name=depart]');
   if(arr){ arr.min=today; } if(dep){ dep.min=today; }
@@ -1015,7 +1016,7 @@
   function show(t,c){ msg.innerHTML=t; msg.style.color=c; }
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var d={}; new FormData(form).forEach(function(v,k){ d[k]=(''+v).trim(); });
+    var d={site:SITE}; new FormData(form).forEach(function(v,k){ d[k]=(''+v).trim(); });
     if(!d.prenom||!d.nom||!d.email||!d.telephone||!d.arrivee||!d.depart){ show('Merci de remplir les champs requis.','#E8622B'); return; }
     if(d.depart<=d.arrivee){ show("La date de départ doit être après l'arrivée.",'#E8622B'); return; }
     var btn=form.querySelector('.resa-submit'), orig=btn.textContent; btn.disabled=true; btn.textContent='Envoi…'; show('','');
