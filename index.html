@@ -74,6 +74,21 @@
   #apt-badge strong{font-family:'Fraunces',serif;font-weight:500;font-size:15px;color:var(--apt-accent)}
   #apt-badge .apt-emblem{width:16px;height:16px;margin:0}
   @media (max-width:640px){#apt-badge{top:70px;font-size:12px;padding:7px 13px}}
+  /* Section « La propriété, en commun » */
+  .shared-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px)}
+  @media (max-width:900px){.shared-grid{grid-template-columns:1fr}}
+  .shared-card{background:#fff;border:1px solid rgba(22,33,31,.1);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px -34px rgba(10,20,19,.3);display:flex;flex-direction:column}
+  .shared-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:#eef5f8}
+  .shared-media--empty{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eaf4f8,#f6f1e7)}
+  .shared-media--empty svg{width:56px;height:56px;opacity:.55}
+  .shared-flag{position:absolute;top:12px;left:12px;background:rgba(9,26,32,.62);color:#fff;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border-radius:999px}
+  .shared-body{padding:20px 22px 24px}
+  .shared-body h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(21px,2vw,26px);margin:0 0 8px}
+  .shared-body p{font-size:15px;line-height:1.6;color:rgba(22,33,31,.7);margin:0}
+  .shared-count{position:absolute;right:12px;bottom:12px;background:rgba(255,255,255,.9);color:#16211F;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;pointer-events:none}
+  .shared-media .slot{cursor:zoom-in}
+  .shared-link{display:inline-flex;margin-top:14px;font-weight:600;font-size:14.5px;color:#1785C0}
+  .shared-link::after{content:' \2192'}
   /* Sections pièce (une section par pièce) */
   .lm-tile-tag{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(9,26,32,.62);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .25s ease}
   .lm-tile-tag:hover{background:rgba(23,133,192,.9)}
@@ -354,11 +369,46 @@
           <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);margin:0">Clair de Lune</h3>
           <div style="font-family:'Fraunces',serif;font-size:23px;color:#E8622B;white-space:nowrap">dès 85 €<span style="font-size:13px;color:rgba(22,33,31,.5);font-family:'Manrope',sans-serif"> / nuit</span></div>
         </div>
-        <p style="font-size:15px;line-height:1.6;color:rgba(22,33,31,.66);margin:12px 0 16px">Le grand logement famille, vue mer panoramique. 2 chambres, grande terrasse, piscine à débordement.</p>
+        <p style="font-size:15px;line-height:1.6;color:rgba(22,33,31,.66);margin:12px 0 16px">Le grand logement famille, vue mer panoramique. 2 chambres, grande terrasse, piscine à débordement partagée.</p>
         <span class="h-link" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:#1785C0">Voir le logement<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
 
+  </div>
+</section>
+
+<!-- ===== LA PROPRIÉTÉ, EN COMMUN (piscine, plage, restaurant) ===== -->
+<section id="espaces-partages" aria-label="La propriété, en commun" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07);border-bottom:1px solid rgba(22,33,31,.07)">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:720px;margin:0 auto clamp(34px,4.5vw,56px)">
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">En commun</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,54px);line-height:1.06;letter-spacing:-.01em;margin:0 0 14px">La propriété, <span style="font-style:italic;font-weight:400">en commun</span>.</h2>
+      <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:0">Lune de Miel et Clair de Lune sont deux logements indépendants. Autour d'eux, quelques plaisirs se partagent : la piscine, et à quelques pas, une plage secrète et le restaurant Orangea.</p>
+    </div>
+    <div class="shared-grid">
+      <article data-reveal class="shared-card" data-gallery>
+        <div class="shared-media"><img class="slot" loading="lazy" decoding="async" src="images/hero-1.webp" alt="La piscine face au lagon, partagée entre les logements"><span class="shared-flag">Partagée</span></div>
+        <div class="shared-body">
+          <h3>La piscine face au lagon</h3>
+          <p>Elle est partagée entre Lune de Miel, Clair de Lune et un appartement voisin. En pratique, elle est le plus souvent calme, et rien que pour vous.</p>
+        </div>
+      </article>
+      <article data-reveal class="shared-card" data-gallery>
+        <div class="shared-media shared-media--empty"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18c2-1.3 4-1.3 6 0s4 1.3 6 0 4-1.3 6 0"/><path d="M4 14c1.4-4.5 4.6-7 8-7s6.6 2.5 8 7"/><circle cx="17" cy="5" r="2"/></svg><span class="shared-flag">5 min à pied</span></div>
+        <div class="shared-body">
+          <h3>La plage secrète</h3>
+          <p>À 5 minutes à pied des logements, une petite plage calme et préservée, loin de l'agitation. Idéale pour une baignade tranquille.</p>
+        </div>
+      </article>
+      <article data-reveal class="shared-card" data-gallery>
+        <div class="shared-media"><img class="slot" loading="lazy" decoding="async" src="images/orangea-restaurant-salle-vue-mer.webp" alt="Le restaurant Orangea Beach Resort, sa terrasse et la vue mer"><span class="shared-flag">5 min à pied</span><span class="shared-count">3 photos</span><div class="gallery-extra" hidden><img loading="lazy" decoding="async" src="images/orangea-restaurant-terrasse.webp" alt="La terrasse du restaurant Orangea face à la mer"><img loading="lazy" decoding="async" src="images/orangea-restaurant-table.webp" alt="Une table au restaurant Orangea, vue sur la plage"></div></div>
+        <div class="shared-body">
+          <h3>Le restaurant Orangea</h3>
+          <p>À 5 minutes à pied, le restaurant de l'Orangea Beach Resort, pour un repas ou un verre les pieds dans le sable, sans prendre la voiture.</p>
+          <a class="shared-link" href="https://www.facebook.com/OrangeaBeachResort" target="_blank" rel="noopener">Voir Orangea sur Facebook</a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -376,7 +426,7 @@
   </div>
 
   <div class="lm-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));grid-auto-rows:210px;gap:12px;margin-bottom:clamp(28px,4vw,40px)">
-    <div data-reveal style="grid-column:span 2;grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/hero-1.webp" alt="Lune de Miel — la piscine face au lagon"></div>
+    <div data-reveal style="grid-column:span 2;grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/hero-1.webp" alt="La piscine face au lagon, partagée entre les logements"><a href="#espaces-partages" class="lm-tile-tag">Piscine partagée</a></div>
     <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-chambre-lit-6.webp" alt="Lune de Miel — la chambre ouverte sur la mer"><a href="#lune-de-miel-chambre" class="lm-tile-tag">La chambre</a></div>
     <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-terrasse-transats-vides.webp" alt="Lune de Miel — la terrasse paillote face à la mer"><a href="#lune-de-miel-terrasse" class="lm-tile-tag">La terrasse</a></div>
     <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-cuisine-vue-ensemble.webp" alt="Lune de Miel — la grande cuisine équipée"><a href="#lune-de-miel-cuisine" class="lm-tile-tag">La cuisine</a></div>
@@ -413,6 +463,7 @@
     <a href="#lune-de-miel-salle-a-manger">La salle à manger</a>
     <a href="#lune-de-miel-salon">Le salon</a>
     <a href="#lune-de-miel-terrasse-jardin">La terrasse côté jardin</a>
+    <a href="#espaces-partages">Espaces partagés</a>
   </nav>
 </section>
 
@@ -616,7 +667,7 @@
         <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Clair de Lune</h2>
         <div style="display:inline-flex;align-items:baseline;gap:9px;background:#16211F;color:#fff;padding:9px 18px;border-radius:999px"><span style="font-size:13px;color:rgba(255,255,255,.6)">dès</span><span style="font-family:'Fraunces',serif;font-size:26px;color:#F2C230">85 €</span><span style="font-size:13px;color:rgba(255,255,255,.6)">/ nuit</span></div>
       </div>
-      <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:16px 0 0;max-width:60ch">Le grand logement de la propriété : 2 chambres, vue mer panoramique, immense terrasse face au coucher de soleil, piscine à débordement et cuisine tout équipée. Jusqu'à 4 personnes.</p>
+      <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:16px 0 0;max-width:60ch">Le grand logement de la propriété : 2 chambres, vue mer panoramique, immense terrasse face au coucher de soleil, cuisine tout équipée et accès à la piscine à débordement partagée. Jusqu'à 4 personnes.</p>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));grid-auto-rows:200px;gap:12px;margin-bottom:clamp(28px,4vw,40px)">
@@ -715,14 +766,14 @@
   <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(36px,5vw,72px);align-items:center">
     <div data-reveal>
       <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:16px">Le tarif</div>
-      <div style="display:flex;align-items:baseline;gap:12px"><span style="font-size:15px;color:rgba(251,251,249,.6)">dès</span><span style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(58px,9vw,104px);line-height:.9;letter-spacing:-.02em;color:#F2C230">85 €</span></div>
-      <div style="font-size:16px;color:rgba(251,251,249,.6);margin-top:6px">la nuit · pour la villa entière</div>
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="font-size:15px;color:rgba(251,251,249,.6)">dès</span><span style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(58px,9vw,104px);line-height:.9;letter-spacing:-.02em;color:#F2C230">65 €</span></div>
+      <div style="font-size:16px;color:rgba(251,251,249,.6);margin-top:6px">la nuit · Lune de Miel dès 65 €, Clair de Lune dès 85 €</div>
       <div style="height:1px;background:rgba(251,251,249,.14);margin:30px 0"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 24px">
         <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Clim &amp; électricité</div>
         <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Wifi & Canal+</div>
         <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Ménage & linge</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Piscine privée</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Piscine partagée</div>
       </div>
     </div>
     <div data-reveal style="background:rgba(251,251,249,.05);border:1px solid rgba(251,251,249,.1);border-radius:14px;padding:clamp(26px,3vw,38px)">
@@ -941,6 +992,21 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "3 photos": { it: "3 foto", en: "3 photos" },
+        "Espaces partagés": { it: "Spazi condivisi", en: "Shared spaces" },
+        "Voir Orangea sur Facebook": { it: "Vedi Orangea su Facebook", en: "See Orangea on Facebook" },
+        "À 5 minutes à pied, le restaurant de l'Orangea Beach Resort, pour un repas ou un verre les pieds dans le sable, sans prendre la voiture.": { it: "A 5 minuti a piedi, il ristorante dell'Orangea Beach Resort, per un pasto o un drink con i piedi nella sabbia, senza prendere l'auto.", en: "A 5-minute walk away, the Orangea Beach Resort restaurant, for a meal or a drink with your feet in the sand, no car needed." },
+        "Le restaurant Orangea": { it: "Il ristorante Orangea", en: "Orangea restaurant" },
+        "À 5 minutes à pied des logements, une petite plage calme et préservée, loin de l'agitation. Idéale pour une baignade tranquille.": { it: "A 5 minuti a piedi dagli alloggi, una piccola spiaggia tranquilla e incontaminata, lontana dalla confusione. Ideale per un bagno in pace.", en: "A 5-minute walk from the units, a small, quiet and unspoilt beach, away from the crowds. Perfect for a peaceful swim." },
+        "La plage secrète": { it: "La spiaggia segreta", en: "The secret beach" },
+        "Elle est partagée entre Lune de Miel, Clair de Lune et un appartement voisin. En pratique, elle est le plus souvent calme, et rien que pour vous.": { it: "È condivisa tra Lune de Miel, Clair de Lune e un appartamento vicino. In pratica è quasi sempre tranquilla, e tutta per voi.", en: "It is shared between Lune de Miel, Clair de Lune and one neighbouring apartment. In practice it is usually quiet, and all yours." },
+        "La piscine face au lagon": { it: "La piscina sulla laguna", en: "The lagoon-view pool" },
+        "5 min à pied": { it: "5 min a piedi", en: "5-min walk" },
+        "Partagée": { it: "Condivisa", en: "Shared" },
+        "Lune de Miel et Clair de Lune sont deux logements indépendants. Autour d'eux, quelques plaisirs se partagent : la piscine, et à quelques pas, une plage secrète et le restaurant Orangea.": { it: "Lune de Miel e Clair de Lune sono due alloggi indipendenti. Intorno a loro, alcuni piaceri si condividono: la piscina e, a pochi passi, una spiaggia segreta e il ristorante Orangea.", en: "Lune de Miel and Clair de Lune are two independent units. A few pleasures are shared around them: the pool and, a short walk away, a secret beach and the Orangea restaurant." },
+        "en commun": { it: "in comune", en: "shared" },
+        "La propriété,": { it: "La proprietà,", en: "The property," },
+        "En commun": { it: "In comune", en: "Shared" },
         "L'escapade à deux": { it: "La fuga per due", en: "A getaway for two" },
         "Vous visitez": { it: "State visitando", en: "You are visiting" },
         "La terrasse côté jardin": { it: "La terrazza sul giardino", en: "The garden terrace" },
@@ -1046,12 +1112,12 @@
         "Pour 2 · nid romantique": { it: "Per 2 · nido romantico", en: "For 2 · romantic nest" },
         "2 chambres · jusqu'à 4": { it: "2 camere · fino a 4", en: "2 bedrooms · up to 4" },
         "Le nid pour deux, les pieds dans l'eau. Chambre climatisée, terrasse et coucher de soleil sur le lagon.": { it: "Il nido per due, con i piedi nell'acqua. Camera climatizzata, terrazza e tramonto sulla laguna.", en: "The nest for two, right by the water. Air-conditioned bedroom, terrace and sunset over the lagoon." },
-        "Le grand logement famille, vue mer panoramique. 2 chambres, grande terrasse, piscine à débordement.": { it: "Il grande alloggio famiglia, vista mare panoramica. 2 camere, grande terrazza, piscina a sfioro.", en: "The large family stay, panoramic sea view. 2 bedrooms, big terrace, infinity pool." },
+        "Le grand logement famille, vue mer panoramique. 2 chambres, grande terrasse, piscine à débordement partagée.": { it: "L'alloggio grande per famiglie, vista mare panoramica. 2 camere, ampia terrazza, piscina a sfioro condivisa.", en: "The large family unit with a panoramic sea view. 2 bedrooms, a big terrace and a shared infinity pool." },
         "Voir le logement": { it: "Vedi l'alloggio", en: "View the stay" },
         "Logement 1 · pour 2": { it: "Alloggio 1 · per 2", en: "Stay 1 · for 2" },
         "Logement 2 · 2 chambres": { it: "Alloggio 2 · 2 camere", en: "Stay 2 · 2 bedrooms" },
         "Un logement pour deux, les pieds dans l'eau à Andilana. Chambre climatisée ouverte sur la mer, séjour lumineux, cuisine équipée et terrasse face au coucher de soleil.": { it: "Un alloggio per due, con i piedi nell'acqua ad Andilana. Camera climatizzata aperta sul mare, soggiorno luminoso, cucina attrezzata e terrazza di fronte al tramonto.", en: "A stay for two, right by the water in Andilana. Air-conditioned bedroom open to the sea, bright living area, fitted kitchen and terrace facing the sunset." },
-        "Le grand logement de la propriété : 2 chambres, vue mer panoramique, immense terrasse face au coucher de soleil, piscine à débordement et cuisine tout équipée. Jusqu'à 4 personnes.": { it: "Il grande alloggio della proprietà: 2 camere, vista mare panoramica, immensa terrazza di fronte al tramonto, piscina a sfioro e cucina completamente attrezzata. Fino a 4 persone.", en: "The property's large stay: 2 bedrooms, panoramic sea view, huge terrace facing the sunset, infinity pool and a fully-equipped kitchen. Up to 4 guests." },
+        "Le grand logement de la propriété : 2 chambres, vue mer panoramique, immense terrasse face au coucher de soleil, cuisine tout équipée et accès à la piscine à débordement partagée. Jusqu'à 4 personnes.": { it: "L'alloggio più grande della proprietà: 2 camere, vista mare panoramica, immensa terrazza sul tramonto, cucina completamente attrezzata e accesso alla piscina a sfioro condivisa. Fino a 4 persone.", en: "The largest unit on the property: 2 bedrooms, panoramic sea view, a huge sunset terrace, a fully equipped kitchen and access to the shared infinity pool. Up to 4 guests." },
         "2 chambres": { it: "2 camere", en: "2 bedrooms" },
         "Jusqu'à 4 personnes": { it: "Fino a 4 persone", en: "Up to 4 guests" },
         "Vue mer panoramique": { it: "Vista mare panoramica", en: "Panoramic sea view" },
@@ -1103,7 +1169,7 @@
         "Quand tu réserves ici, tu me parles directement. Je réponds vite, je connais l'île par cœur, et je serai là pour rendre ton séjour simple et sans souci.": { it: "Quando prenoti qui, parli direttamente con me. Rispondo in fretta, conosco l'isola a memoria e ci sarò per rendere il tuo soggiorno semplice e senza pensieri.", en: "When you book here, you talk to me directly. I reply fast, I know the island by heart, and I'll be there to make your stay simple and carefree." },
         "Votre hôte · Rentanoo": { it: "Il tuo host · Rentanoo", en: "Your host · Rentanoo" },
         "Portrait de Chris — photo à ajouter": { it: "Ritratto di Chris — foto da aggiungere", en: "Chris's portrait — photo to add" },
-        "la nuit · pour la villa entière": { it: "a notte · per la villa intera", en: "per night · for the whole villa" },
+        "la nuit · Lune de Miel dès 65 €, Clair de Lune dès 85 €": { it: "a notte · Lune de Miel da 65 €, Clair de Lune da 85 €", en: "per night · Lune de Miel from €65, Clair de Lune from €85" },
         "Wifi & Canal+": { it: "Wifi e Canal+", en: "Wifi & Canal+" },
         "Andilana, les pieds dans l'eau.": { it: "Andilana, con i piedi nell'acqua.", en: "Andilana, right by the water." },
         "Écris-nous tes dates. On te répond vite, avec de vrais conseils pour ton séjour à Nosy Be.": { it: "Scrivici le tue date. Ti rispondiamo in fretta, con veri consigli per il tuo soggiorno a Nosy Be.", en: "Send us your dates. We reply fast, with real advice for your stay in Nosy Be." },
