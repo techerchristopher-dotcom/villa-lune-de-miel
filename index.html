@@ -58,6 +58,22 @@
   @keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
   @keyframes scrollDot{0%{transform:translateY(0);opacity:0}30%{opacity:1}80%{opacity:1}100%{transform:translateY(14px);opacity:0}}
 
+  /* Sous-thème par logement — Lune de Miel : « L'escapade à deux » (coucher de soleil, emblème cœur) */
+  .theme-ldm{--apt-accent:#C9502F;--apt-accent-2:#F29A7E;--apt-soft:rgba(232,98,43,.08);--apt-line:rgba(201,80,47,.26);--apt-tint:#fcf6f1}
+  .theme-ldm .lm-spec{background:var(--apt-soft);border-color:var(--apt-line)}
+  .theme-ldm .room-nav a{border-color:var(--apt-line)}
+  .theme-ldm .room-nav a:hover{background:var(--apt-soft);border-color:var(--apt-accent)}
+  .theme-ldm .room-nav a::after,.theme-ldm .room-more .n{color:var(--apt-accent)}
+  .theme-ldm .room-more:hover{border-color:var(--apt-accent);background:var(--apt-soft)}
+  .theme-ldm .lm-tile-tag:hover{background:rgba(201,80,47,.92)}
+  .apt-emblem{width:.62em;height:.62em;color:var(--apt-accent);vertical-align:.02em;margin-left:.18em;flex:none}
+  .apt-tagline{display:inline-flex;align-items:center;gap:8px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,1.6vw,21px);color:var(--apt-accent);margin:10px 0 0}
+  .apt-watermark{position:absolute;right:clamp(-10px,2vw,40px);top:clamp(10px,3vw,40px);width:clamp(120px,16vw,210px);height:auto;color:var(--apt-accent);opacity:.07;pointer-events:none}
+  #apt-badge{position:fixed;left:50%;top:78px;z-index:45;transform:translate(-50%,-12px);opacity:0;pointer-events:none;display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.94);box-shadow:0 10px 30px -14px rgba(10,20,19,.35);border:1px solid var(--apt-line,rgba(22,33,31,.1));font-size:13px;color:#16211F;transition:opacity .35s ease,transform .35s ease;white-space:nowrap}
+  #apt-badge.show{opacity:1;transform:translate(-50%,0)}
+  #apt-badge strong{font-family:'Fraunces',serif;font-weight:500;font-size:15px;color:var(--apt-accent)}
+  #apt-badge .apt-emblem{width:16px;height:16px;margin:0}
+  @media (max-width:640px){#apt-badge{top:70px;font-size:12px;padding:7px 13px}}
   /* Sections pièce (une section par pièce) */
   .lm-tile-tag{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(9,26,32,.62);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .25s ease}
   .lm-tile-tag:hover{background:rgba(23,133,192,.9)}
@@ -317,12 +333,12 @@
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,32px)">
 
-    <a href="#lune-de-miel" data-reveal class="h-card" style="display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(22,33,31,.1);background:#fff;box-shadow:0 20px 50px -30px rgba(10,20,19,.3);transition:transform .3s ease,box-shadow .3s ease;color:inherit">
+    <a href="#lune-de-miel" data-reveal class="h-card theme-ldm" style="display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(22,33,31,.1);background:#fff;box-shadow:0 20px 50px -30px rgba(10,20,19,.3);transition:transform .3s ease,box-shadow .3s ease;color:inherit">
       <div style="position:relative;aspect-ratio:16/11;overflow:hidden"><img loading="lazy" decoding="async" src="images/hero-2.webp" alt="Lune de Miel — la terrasse et sa vue sur le lagon" style="width:100%;height:100%;object-fit:cover">
-        <span style="position:absolute;top:14px;left:14px;background:rgba(9,26,32,.58);color:#fff;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(3px)">Pour 2 · nid romantique</span></div>
+        <span style="position:absolute;top:14px;left:14px;background:rgba(9,26,32,.58);color:#fff;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(3px);background:rgba(201,80,47,.82)">Pour 2 · nid romantique</span></div>
       <div style="padding:22px 24px 24px">
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
-          <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);margin:0">Lune de Miel</h3>
+          <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);margin:0;display:inline-flex;align-items:center">Lune de Miel<svg class="apt-emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.2 13.9 26.3C6.6 19.7 1.8 15.4 1.8 10.1 1.8 5.8 5.2 2.4 9.5 2.4c2.4 0 4.8 1.1 6.5 2.9 1.7-1.8 4.1-2.9 6.5-2.9 4.3 0 7.7 3.4 7.7 7.7 0 5.3-4.8 9.6-12.1 16.2L16 28.2Z" fill="currentColor"/></svg></h3>
           <div style="font-family:'Fraunces',serif;font-size:23px;color:#E8622B;white-space:nowrap">dès 65 €<span style="font-size:13px;color:rgba(22,33,31,.5);font-family:'Manrope',sans-serif"> / nuit</span></div>
         </div>
         <p style="font-size:15px;line-height:1.6;color:rgba(22,33,31,.66);margin:12px 0 16px">Le nid pour deux, les pieds dans l'eau. Chambre climatisée, terrasse et coucher de soleil sur le lagon.</p>
@@ -347,13 +363,15 @@
 </section>
 
 <!-- ===== LOGEMENT 1 · LUNE DE MIEL ===== -->
-<section id="lune-de-miel" aria-label="Lune de Miel" style="padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;scroll-margin-top:76px">
+<section id="lune-de-miel" class="theme-ldm" data-apt-name="Lune de Miel" aria-label="Lune de Miel" style="position:relative;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;scroll-margin-top:76px">
+  <svg class="apt-watermark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.2 13.9 26.3C6.6 19.7 1.8 15.4 1.8 10.1 1.8 5.8 5.2 2.4 9.5 2.4c2.4 0 4.8 1.1 6.5 2.9 1.7-1.8 4.1-2.9 6.5-2.9 4.3 0 7.7 3.4 7.7 7.7 0 5.3-4.8 9.6-12.1 16.2L16 28.2Z" fill="currentColor"/></svg>
   <div data-reveal style="margin-bottom:clamp(28px,4vw,44px)">
-    <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Logement 1 · pour 2</div>
+    <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Logement 1 · pour 2</div>
     <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:14px">
-      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Lune de Miel<span style="font-style:italic"></span></h2>
-      <div style="display:inline-flex;align-items:baseline;gap:9px;background:#16211F;color:#fff;padding:9px 18px;border-radius:999px"><span style="font-size:13px;color:rgba(255,255,255,.6)">dès</span><span style="font-family:'Fraunces',serif;font-size:26px;color:#F2C230">65 €</span><span style="font-size:13px;color:rgba(255,255,255,.6)">/ nuit</span></div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0;display:inline-flex;align-items:center">Lune de Miel<svg class="apt-emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.2 13.9 26.3C6.6 19.7 1.8 15.4 1.8 10.1 1.8 5.8 5.2 2.4 9.5 2.4c2.4 0 4.8 1.1 6.5 2.9 1.7-1.8 4.1-2.9 6.5-2.9 4.3 0 7.7 3.4 7.7 7.7 0 5.3-4.8 9.6-12.1 16.2L16 28.2Z" fill="currentColor"/></svg></h2>
+      <div style="display:inline-flex;align-items:baseline;gap:9px;background:#16211F;color:#fff;padding:9px 18px;border-radius:999px"><span style="font-size:13px;color:rgba(255,255,255,.6)">dès</span><span style="font-family:'Fraunces',serif;font-size:26px;color:var(--apt-accent-2)">65 €</span><span style="font-size:13px;color:rgba(255,255,255,.6)">/ nuit</span></div>
     </div>
+    <div class="apt-tagline">L'escapade à deux</div>
     <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:16px 0 0;max-width:60ch">Un logement pour deux, les pieds dans l'eau à Andilana. Chambre climatisée ouverte sur la mer, séjour lumineux, cuisine équipée et terrasse face au coucher de soleil.</p>
   </div>
 
@@ -406,10 +424,10 @@
   - ajouter le lien dans la nav .room-nav du logement + les traductions IT/EN dans T
 -->
 <!-- ===== LA CHAMBRE (Lune de Miel) ===== -->
-<section id="lune-de-miel-chambre" data-apt="lune-de-miel" data-room="chambre" aria-label="La chambre" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="lune-de-miel-chambre" data-apt="lune-de-miel" data-room="chambre" aria-label="La chambre" style="background:var(--apt-tint);padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La chambre</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · La chambre</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Se réveiller face à la <span style="font-style:italic;font-weight:400">mer</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Une grande chambre climatisée qui s'ouvre sur la terrasse et le lagon. Côté chambre, une banquette pour lire, faire la sieste ou simplement ne rien faire.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -429,10 +447,10 @@
 </section>
 
 <!-- ===== LA TERRASSE (Lune de Miel) ===== -->
-<section id="lune-de-miel-terrasse" data-apt="lune-de-miel" data-room="terrasse" aria-label="La terrasse" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="lune-de-miel-terrasse" data-apt="lune-de-miel" data-room="terrasse" aria-label="La terrasse" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid is-reverse" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La terrasse</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · La terrasse</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">La mer à <span style="font-style:italic;font-weight:400">360°</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">De la chambre, on passe directement sur une grande terrasse abritée par une paillote, avec une vue à 360° sur la mer et les îles. Transats, fauteuils à bascule et fauteuils en rotin : de quoi lire, faire la sieste ou attendre le coucher de soleil.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -452,10 +470,10 @@
 </section>
 
 <!-- ===== ESPACE TÉLÉTRAVAIL (Lune de Miel) ===== -->
-<section id="teletravail" data-apt="lune-de-miel" data-room="teletravail" aria-label="Espace télétravail" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="teletravail" data-apt="lune-de-miel" data-room="teletravail" aria-label="Espace télétravail" style="background:var(--apt-tint);padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · Espace télétravail</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · Espace télétravail</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Travailler face au <span style="font-style:italic;font-weight:400">lagon</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Un grand bureau en bois installé dans la chambre, ouvert sur la terrasse et la mer. La lumière naturelle le jour, la clim quand il fait chaud, et le wifi pour vos visios.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -475,10 +493,10 @@
 </section>
 
 <!-- ===== LA SALLE DE BAIN (Lune de Miel) ===== -->
-<section id="lune-de-miel-sdb" data-apt="lune-de-miel" data-room="sdb" aria-label="La salle de bain" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="lune-de-miel-sdb" data-apt="lune-de-miel" data-room="sdb" aria-label="La salle de bain" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid is-reverse" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La salle de bain</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · La salle de bain</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Deux vasques, une <span style="font-style:italic;font-weight:400">douche à l'italienne</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Une salle de bain spacieuse et lumineuse : double vasque sur un long meuble en bois, grands miroirs, douche à l'italienne et fenêtres qui laissent entrer la lumière du jour. Chacun son lavabo, même le matin.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -498,10 +516,10 @@
 </section>
 
 <!-- ===== LA CUISINE (Lune de Miel) ===== -->
-<section id="lune-de-miel-cuisine" data-apt="lune-de-miel" data-room="cuisine" aria-label="La cuisine" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="lune-de-miel-cuisine" data-apt="lune-de-miel" data-room="cuisine" aria-label="La cuisine" style="background:var(--apt-tint);padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La cuisine</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · La cuisine</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Cuisiner comme à la <span style="font-style:italic;font-weight:400">maison</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Une grande cuisine lumineuse, ouverte sur le jardin : plaque de cuisson au gaz, grand réfrigérateur, four, micro-ondes, cafetière, bouilloire et grille-pain. Du café du matin au dîner à deux, tout est là.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -521,10 +539,10 @@
 </section>
 
 <!-- ===== LA SALLE À MANGER (Lune de Miel) ===== -->
-<section id="lune-de-miel-salle-a-manger" data-apt="lune-de-miel" data-room="salle-a-manger" aria-label="La salle à manger" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="lune-de-miel-salle-a-manger" data-apt="lune-de-miel" data-room="salle-a-manger" aria-label="La salle à manger" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid is-reverse" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La salle à manger</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · La salle à manger</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">À table, <span style="font-style:italic;font-weight:400">face au jardin</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Une salle à manger lumineuse avec sa table ronde et ses chaises en bois, entre les fenêtres sur le jardin et la baie vitrée qui ouvre sur la terrasse. Pour le petit-déjeuner, l'apéro ou un dîner à deux.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -544,10 +562,10 @@
 </section>
 
 <!-- ===== LE SALON (Lune de Miel) ===== -->
-<section id="lune-de-miel-salon" data-apt="lune-de-miel" data-room="salon" aria-label="Le salon" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="lune-de-miel-salon" data-apt="lune-de-miel" data-room="salon" aria-label="Le salon" style="background:var(--apt-tint);padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · Le salon</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · Le salon</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Le salon, <span style="font-style:italic;font-weight:400">tout en douceur</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Un grand séjour lumineux avec son canapé en bois, la télévision et Canal+, un ventilateur au plafond et une baie vitrée qui ouvre sur le jardin. L'endroit idéal pour une soirée film après la plage.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -567,10 +585,10 @@
 </section>
 
 <!-- ===== LA TERRASSE CÔTÉ JARDIN (Lune de Miel) ===== -->
-<section id="lune-de-miel-terrasse-jardin" data-apt="lune-de-miel" data-room="terrasse-jardin" aria-label="La terrasse côté jardin" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section class="theme-ldm" data-apt-name="Lune de Miel" id="lune-de-miel-terrasse-jardin" data-apt="lune-de-miel" data-room="terrasse-jardin" aria-label="La terrasse côté jardin" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid is-reverse" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La terrasse côté jardin</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Lune de Miel · La terrasse côté jardin</div>
       <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">L'apéro, <span style="font-style:italic;font-weight:400">face à la mer</span>.</h2>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Au rez-de-chaussée, une terrasse couverte ouvre sur le jardin et la baie. Fauteuils de jardin, table basse et vue dégagée sur la mer : le coin parfait pour un verre en fin de journée, à l'ombre.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
@@ -855,10 +873,30 @@
 
 </div>
 
+<div id="apt-badge" class="theme-ldm" aria-hidden="true"><svg class="apt-emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.2 13.9 26.3C6.6 19.7 1.8 15.4 1.8 10.1 1.8 5.8 5.2 2.4 9.5 2.4c2.4 0 4.8 1.1 6.5 2.9 1.7-1.8 4.1-2.9 6.5-2.9 4.3 0 7.7 3.4 7.7 7.7 0 5.3-4.8 9.6-12.1 16.2L16 28.2Z" fill="currentColor"/></svg><span>Vous visitez</span> <strong>Lune de Miel</strong></div>
 <div id="lightbox" aria-hidden="true" role="dialog" aria-label="Photos"><span class="lb-close" aria-label="Fermer">&times;</span><button type="button" class="lb-nav lb-prev" aria-label="Photo précédente">&#8249;</button><img alt=""><button type="button" class="lb-nav lb-next" aria-label="Photo suivante">&#8250;</button><div class="lb-count"></div></div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Bandeau « Vous visitez : <logement> » pendant la visite d'un logement
+    (function () {
+      var badge = document.getElementById('apt-badge');
+      if (!badge) return;
+      var zones = [].slice.call(document.querySelectorAll('section.theme-ldm'));
+      function update() {
+        var mid = window.innerHeight / 2, inside = false;
+        for (var k = 0; k < zones.length; k++) {
+          var r = zones[k].getBoundingClientRect();
+          if (r.top <= mid && r.bottom >= mid) { inside = true; break; }
+        }
+        badge.classList.toggle('show', inside && window.scrollY > 300);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      window.addEventListener('load', update);
+      update();
+    })();
+
     // Lightbox — clic sur une photo pour l'agrandir
     (function () {
       var lb = document.getElementById('lightbox');
@@ -903,6 +941,8 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "L'escapade à deux": { it: "La fuga per due", en: "A getaway for two" },
+        "Vous visitez": { it: "State visitando", en: "You are visiting" },
         "La terrasse côté jardin": { it: "La terrazza sul giardino", en: "The garden terrace" },
         "Lune de Miel · La terrasse côté jardin": { it: "Lune de Miel · La terrazza sul giardino", en: "Lune de Miel · The garden terrace" },
         "L'apéro,": { it: "L'aperitivo,", en: "Drinks," },
