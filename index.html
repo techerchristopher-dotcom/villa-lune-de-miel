@@ -59,6 +59,11 @@
   @keyframes scrollDot{0%{transform:translateY(0);opacity:0}30%{opacity:1}80%{opacity:1}100%{transform:translateY(14px);opacity:0}}
 
   /* Sections pièce (une section par pièce) */
+  .room-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 10px;margin-top:clamp(30px,4vw,44px);padding-top:clamp(22px,3vw,30px);border-top:1px solid rgba(22,33,31,.08)}
+  .room-nav-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,33,31,.5);margin-right:6px}
+  .room-nav a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid rgba(23,133,192,.28);color:#16211F;font-size:14px;font-weight:600;transition:background .25s ease,border-color .25s ease}
+  .room-nav a:hover{background:rgba(23,133,192,.08);border-color:#1785C0}
+  .room-nav a::after{content:'\2193';color:#1785C0;font-size:13px}
   .room-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,5vw,72px);align-items:center}
   .room-grid.is-reverse{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
   .room-grid.is-reverse>:first-child{order:2}
@@ -358,10 +363,23 @@
     <a href="https://www.airbnb.fr/rooms/1735502690767993267" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(22,33,31,.18);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:7px;height:7px;border-radius:50%;background:#E8622B"></span>Airbnb</a>
     <a href="https://www.booking.com/Share-K8gCpK" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(22,33,31,.18);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
   </div>
+  <!-- Navigation pièce par pièce : ajouter un lien par section pièce (data-apt="lune-de-miel") -->
+  <nav class="room-nav" aria-label="Lune de Miel pièce par pièce">
+    <span class="room-nav-label">Pièce par pièce</span>
+    <a href="#lune-de-miel-chambre">La chambre</a>
+    <a href="#teletravail">Espace télétravail</a>
+  </nav>
 </section>
 
+<!-- ===== MODÈLE « SECTION PIÈCE » =====
+  Une section par pièce, placée juste après la section du logement.
+  - id : <logement>-<piece> (ex. lune-de-miel-salon, clair-de-lune-chambre-1) + data-apt / data-room
+  - fond : alterner #fbfbf9 / #ffffff ; mise en page : alterner class="room-grid" / "room-grid is-reverse"
+  - photos : images/<logement>-<piece>-N.webp (portrait 1350x1800, cwebp -q 80), 2 photos dans .room-photos
+  - ajouter le lien dans la nav .room-nav du logement + les traductions IT/EN dans T
+-->
 <!-- ===== LA CHAMBRE (Lune de Miel) ===== -->
-<section id="lune-de-miel-chambre" aria-label="La chambre" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section id="lune-de-miel-chambre" data-apt="lune-de-miel" data-room="chambre" aria-label="La chambre" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
       <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La chambre</div>
@@ -380,7 +398,7 @@
 </section>
 
 <!-- ===== ESPACE TÉLÉTRAVAIL (Lune de Miel) ===== -->
-<section id="teletravail" aria-label="Espace télétravail" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+<section id="teletravail" data-apt="lune-de-miel" data-room="teletravail" aria-label="Espace télétravail" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
   <div class="room-grid is-reverse" style="max-width:1240px;margin:0 auto">
     <div data-reveal>
       <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · Espace télétravail</div>
@@ -685,6 +703,9 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "Pièce par pièce": { it: "Stanza per stanza", en: "Room by room" },
+        "La chambre": { it: "La camera", en: "The bedroom" },
+        "Espace télétravail": { it: "Spazio smart working", en: "Remote work space" },
         "Lune de Miel · La chambre": { it: "Lune de Miel · La camera", en: "Lune de Miel · The bedroom" },
         "Se réveiller face à la": { it: "Svegliarsi davanti al", en: "Waking up facing the" },
         "mer": { it: "mare", en: "sea" },
