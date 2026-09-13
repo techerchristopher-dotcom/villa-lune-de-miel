@@ -89,6 +89,22 @@
   .shared-media .slot{cursor:zoom-in}
   .shared-link{display:inline-flex;margin-top:14px;font-weight:600;font-size:14.5px;color:#1785C0}
   .shared-link::after{content:' \2192'}
+  /* Taxi Food */
+  .tf-card{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:clamp(22px,4vw,48px);padding:clamp(24px,3.5vw,42px);border-radius:20px;background:linear-gradient(120deg,#fff4ea,#fffaf2);border:1px solid rgba(232,52,42,.14);box-shadow:0 24px 60px -40px rgba(232,52,42,.45)}
+  .tf-logo{width:clamp(96px,13vw,150px);height:auto;border-radius:24%;flex:none;box-shadow:0 18px 40px -20px rgba(232,52,42,.55)}
+  .tf-eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#E8342A;margin-bottom:10px}
+  .tf-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(26px,3.4vw,44px);line-height:1.08;letter-spacing:-.01em;margin:0 0 12px;color:#16211F}
+  .tf-title span{font-style:italic;font-weight:400;color:#E8342A}
+  .tf-text{font-size:16px;line-height:1.62;color:rgba(22,33,31,.72);margin:0 0 22px;max-width:58ch}
+  .tf-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:linear-gradient(90deg,#E8342A,#FF8A1E);color:#fff;font-weight:600;font-size:15.5px;box-shadow:0 14px 30px -14px rgba(232,52,42,.7);transition:transform .25s ease,box-shadow .25s ease}
+  .tf-cta:hover{transform:translateY(-2px);box-shadow:0 18px 36px -14px rgba(232,52,42,.8)}
+  .tf-cta::after{content:'\2197';font-size:14px}
+  .tf-wink{display:flex;align-items:center;gap:12px;max-width:420px;margin:0 0 24px;padding:10px 16px 10px 10px;border-radius:14px;background:linear-gradient(120deg,#fff4ea,#fffaf2);border:1px solid rgba(232,52,42,.16);color:#16211F;font-size:14.5px;line-height:1.35;transition:border-color .25s ease,transform .25s ease}
+  .tf-wink:hover{border-color:#E8342A;transform:translateY(-1px)}
+  .tf-wink img{width:42px;height:42px;border-radius:24%;flex:none}
+  .tf-wink strong{color:#E8342A;font-weight:600}
+  .tf-wink::after{content:'\2197';margin-left:auto;color:#E8342A}
+  @media (max-width:640px){.tf-card{flex-direction:column;text-align:center}.tf-text{margin-left:auto;margin-right:auto}}
   /* Sections pièce (une section par pièce) */
   .lm-tile-tag{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(9,26,32,.62);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .25s ease}
   .lm-tile-tag:hover{background:rgba(23,133,192,.9)}
@@ -412,6 +428,19 @@
   </div>
 </section>
 
+<!-- ===== TAXI FOOD (livraison de repas) ===== -->
+<section id="taxi-food" aria-label="Taxi Food, livraison de repas" style="background:#ffffff;padding:clamp(48px,6vw,80px) clamp(20px,5vw,64px);scroll-margin-top:76px">
+  <div data-reveal class="tf-card">
+    <img class="tf-logo" src="images/taxifood-logo.webp" width="256" height="256" alt="Logo Taxi Food Nosy Be" loading="lazy" decoding="async">
+    <div class="tf-body">
+      <div class="tf-eyebrow">Taxi Food · Livraison à Nosy Be</div>
+      <h2 class="tf-title">La flemme de cuisiner ? <span>Faites-vous livrer.</span></h2>
+      <p class="tf-text">Pas envie de faire à manger ce soir ? Avec Taxi Food, commandez auprès des restaurants de Nosy Be et faites-vous livrer directement au logement. Pizza, burger, tacos ou crêpes : il ne reste plus qu'à mettre les pieds sous la table.</p>
+      <a class="tf-cta" href="https://taxifoodnosybe.distripro207.com/" target="_blank" rel="noopener">Commander sur Taxi Food</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== LOGEMENT 1 · LUNE DE MIEL ===== -->
 <section id="lune-de-miel" class="theme-ldm" data-apt-name="Lune de Miel" aria-label="Lune de Miel" style="position:relative;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;scroll-margin-top:76px">
   <svg class="apt-watermark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.2 13.9 26.3C6.6 19.7 1.8 15.4 1.8 10.1 1.8 5.8 5.2 2.4 9.5 2.4c2.4 0 4.8 1.1 6.5 2.9 1.7-1.8 4.1-2.9 6.5-2.9 4.3 0 7.7 3.4 7.7 7.7 0 5.3-4.8 9.6-12.1 16.2L16 28.2Z" fill="currentColor"/></svg>
@@ -576,6 +605,7 @@
       <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
         <span class="lm-spec">Cuisine équipée</span><span class="lm-spec">Plaque de cuisson gaz</span><span class="lm-spec">Grand réfrigérateur</span><span class="lm-spec">Ustensiles fournis</span>
       </div>
+      <a class="tf-wink" href="https://taxifoodnosybe.distripro207.com/" target="_blank" rel="noopener"><img src="images/taxifood-logo.webp" width="256" height="256" alt="" loading="lazy" decoding="async"><span><strong>La flemme de cuisiner ?</strong> <span>Faites-vous livrer avec Taxi Food</span></span></a>
       <a href="#reservation" class="h-book" data-book="Lune de Miel" style="display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;box-shadow:0 16px 38px -16px rgba(10,20,19,.45);transition:background .25s ease,transform .25s ease">Réserver Lune de Miel</a>
     </div>
     <div class="room-photos-wrap">
@@ -992,6 +1022,12 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "Faites-vous livrer avec Taxi Food": { it: "Fatevi consegnare con Taxi Food", en: "Get it delivered with Taxi Food" },
+        "Taxi Food · Livraison à Nosy Be": { it: "Taxi Food · Consegna a Nosy Be", en: "Taxi Food · Delivery in Nosy Be" },
+        "La flemme de cuisiner ?": { it: "Pigri ai fornelli?", en: "Too lazy to cook?" },
+        "Faites-vous livrer.": { it: "Fatevi consegnare.", en: "Get it delivered." },
+        "Pas envie de faire à manger ce soir ? Avec Taxi Food, commandez auprès des restaurants de Nosy Be et faites-vous livrer directement au logement. Pizza, burger, tacos ou crêpes : il ne reste plus qu'à mettre les pieds sous la table.": { it: "Niente voglia di cucinare stasera? Con Taxi Food ordinate dai ristoranti di Nosy Be e fatevi consegnare direttamente all'alloggio. Pizza, burger, tacos o crêpe: non resta che mettersi a tavola.", en: "No desire to cook tonight? With Taxi Food, order from Nosy Be's restaurants and get it delivered straight to your stay. Pizza, burgers, tacos or crêpes: all that's left is to sit down and enjoy." },
+        "Commander sur Taxi Food": { it: "Ordina su Taxi Food", en: "Order on Taxi Food" },
         "2 photos": { it: "2 foto", en: "2 photos" },
         "8 photos": { it: "8 foto", en: "8 photos" },
         "9 photos": { it: "9 foto", en: "9 photos" },
