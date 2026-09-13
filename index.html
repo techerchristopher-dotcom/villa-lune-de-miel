@@ -59,6 +59,11 @@
   @keyframes scrollDot{0%{transform:translateY(0);opacity:0}30%{opacity:1}80%{opacity:1}100%{transform:translateY(14px);opacity:0}}
 
   /* Sections pièce (une section par pièce) */
+  .lm-tile-tag{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(9,26,32,.62);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .25s ease}
+  .lm-tile-tag:hover{background:rgba(23,133,192,.9)}
+  .lm-tile-tag::after{content:'\2193';font-size:11px;opacity:.85}
+  .lm-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+  @media (max-width:900px){.lm-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:190px!important}}
   .room-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 10px;margin-top:clamp(30px,4vw,44px);padding-top:clamp(22px,3vw,30px);border-top:1px solid rgba(22,33,31,.08)}
   .room-nav-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,33,31,.5);margin-right:6px}
   .room-nav a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid rgba(23,133,192,.28);color:#16211F;font-size:14px;font-weight:600;transition:background .25s ease,border-color .25s ease}
@@ -352,11 +357,16 @@
     <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:16px 0 0;max-width:60ch">Un logement pour deux, les pieds dans l'eau à Andilana. Chambre climatisée ouverte sur la mer, séjour lumineux, cuisine équipée et terrasse face au coucher de soleil.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));grid-auto-rows:210px;gap:12px;margin-bottom:clamp(28px,4vw,40px)">
+  <div class="lm-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));grid-auto-rows:210px;gap:12px;margin-bottom:clamp(28px,4vw,40px)">
     <div data-reveal style="grid-column:span 2;grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/hero-1.webp" alt="Lune de Miel — la piscine face au lagon"></div>
-    <div data-reveal style="position:relative;border-radius:8px;overflow:hidden"><img class="slot" loading="lazy" decoding="async" src="images/chambre-1.webp" alt="Lune de Miel — la chambre climatisée"></div>
-    <div data-reveal style="position:relative;border-radius:8px;overflow:hidden"><img class="slot" loading="lazy" decoding="async" src="images/res-2.webp" alt="Lune de Miel — la terrasse"></div>
-    <div data-reveal style="grid-column:span 2;position:relative;border-radius:8px;overflow:hidden"><img class="slot" loading="lazy" decoding="async" src="images/res-4.webp" alt="Lune de Miel — la vue sur le lagon"></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-chambre-lit-6.webp" alt="Lune de Miel — la chambre ouverte sur la mer"><a href="#lune-de-miel-chambre" class="lm-tile-tag">La chambre</a></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-terrasse-transats-vides.webp" alt="Lune de Miel — la terrasse paillote face à la mer"><a href="#lune-de-miel-terrasse" class="lm-tile-tag">La terrasse</a></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-cuisine-vue-ensemble.webp" alt="Lune de Miel — la grande cuisine équipée"><a href="#lune-de-miel-cuisine" class="lm-tile-tag">La cuisine</a></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-salon-vide-tv-baie.webp" alt="Lune de Miel — le salon et sa baie vitrée"><a href="#lune-de-miel-salon" class="lm-tile-tag">Le salon</a></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-salle-a-manger-dessert-crepe.webp" alt="Lune de Miel — la salle à manger face à la terrasse"><a href="#lune-de-miel-salle-a-manger" class="lm-tile-tag">La salle à manger</a></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-sdb-1.webp" alt="Lune de Miel — la salle de bain et sa double vasque"><a href="#lune-de-miel-sdb" class="lm-tile-tag">La salle de bain</a></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-teletravail-bureau-face.webp" alt="Lune de Miel — le poste de télétravail"><a href="#teletravail" class="lm-tile-tag">Espace télétravail</a></div>
+    <div data-reveal style="grid-row:span 2;position:relative;border-radius:8px;overflow:hidden;min-height:210px"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-terrasse-jardin-apero-vue-mer.webp" alt="Lune de Miel — la terrasse côté jardin face à la mer"><a href="#lune-de-miel-terrasse-jardin" class="lm-tile-tag">La terrasse côté jardin</a></div>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin-bottom:clamp(28px,4vw,36px)">
@@ -384,6 +394,7 @@
     <a href="#lune-de-miel-cuisine">La cuisine</a>
     <a href="#lune-de-miel-salle-a-manger">La salle à manger</a>
     <a href="#lune-de-miel-salon">Le salon</a>
+    <a href="#lune-de-miel-terrasse-jardin">La terrasse côté jardin</a>
   </nav>
 </section>
 
@@ -551,6 +562,29 @@
       </div>
       <button type="button" class="room-more"><span>Voir plus de photos</span> <span class="n">+13</span></button>
       <div class="gallery-extra" hidden><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-vers-escalier.webp" alt="Lune de Miel — le salon ouvert vers l'escalier"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-canape.webp" alt="Lune de Miel — détente sur le canapé devant la télévision"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-vue-ensemble.webp" alt="Lune de Miel — le salon, la baie vitrée et l'escalier"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-vide-canape.webp" alt="Lune de Miel — le canapé, la table basse et la baie vitrée"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-vide-table-basse.webp" alt="Lune de Miel — la table basse face à la télévision"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-vide-tv.webp" alt="Lune de Miel — le coin télévision et la vue sur le jardin"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-vide-perspective.webp" alt="Lune de Miel — le séjour en enfilade jusqu'à la baie vitrée"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-deco-flamant.webp" alt="Lune de Miel — la sculpture de flamant rose"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-deco-miroir.webp" alt="Lune de Miel — le miroir et la console décorée"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-deco-console.webp" alt="Lune de Miel — les statuettes malgaches sur la console"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-deco-panneau.webp" alt="Lune de Miel — « Vous êtes ici chez vous »"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-deco-attrape-reves.webp" alt="Lune de Miel — l'attrape-rêves en macramé"><img loading="lazy" decoding="async" src="images/lune-de-miel-salon-deco-voilier.webp" alt="Lune de Miel — la maquette de voilier"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LA TERRASSE CÔTÉ JARDIN (Lune de Miel) ===== -->
+<section id="lune-de-miel-terrasse-jardin" data-apt="lune-de-miel" data-room="terrasse-jardin" aria-label="La terrasse côté jardin" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+  <div class="room-grid is-reverse" style="max-width:1240px;margin:0 auto">
+    <div data-reveal>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La terrasse côté jardin</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">L'apéro, <span style="font-style:italic;font-weight:400">face à la mer</span>.</h2>
+      <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Au rez-de-chaussée, une terrasse couverte ouvre sur le jardin et la baie. Fauteuils de jardin, table basse et vue dégagée sur la mer : le coin parfait pour un verre en fin de journée, à l'ombre.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
+        <span class="lm-spec">Terrasse couverte</span><span class="lm-spec">Vue mer</span><span class="lm-spec">Accès jardin</span><span class="lm-spec">Salon de jardin</span>
+      </div>
+      <a href="#reservation" class="h-book" data-book="Lune de Miel" style="display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;box-shadow:0 16px 38px -16px rgba(10,20,19,.45);transition:background .25s ease,transform .25s ease">Réserver Lune de Miel</a>
+    </div>
+    <div class="room-photos-wrap">
+      <div class="room-photos">
+        <div data-reveal style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-terrasse-jardin-apero-vue-mer.webp" width="1350" height="1800" alt="Lune de Miel — l'apéro sur la terrasse couverte, face à la mer"></div>
+        <div data-reveal style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;margin-top:clamp(28px,5vw,64px)"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-terrasse-jardin-detente.webp" width="1350" height="1800" alt="Lune de Miel — détente sur la terrasse avec vue sur la baie"></div>
+      </div>
+      <button type="button" class="room-more"><span>Voir plus de photos</span> <span class="n">+1</span></button>
+      <div class="gallery-extra" hidden><img loading="lazy" decoding="async" src="images/lune-de-miel-terrasse-jardin-apero.webp" alt="Lune de Miel — trinquer face à la mer, à l'ombre de la terrasse"></div>
     </div>
   </div>
 </section>
@@ -869,6 +903,14 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "La terrasse côté jardin": { it: "La terrazza sul giardino", en: "The garden terrace" },
+        "Lune de Miel · La terrasse côté jardin": { it: "Lune de Miel · La terrazza sul giardino", en: "Lune de Miel · The garden terrace" },
+        "L'apéro,": { it: "L'aperitivo,", en: "Drinks," },
+        "face à la mer": { it: "davanti al mare", en: "facing the sea" },
+        "Au rez-de-chaussée, une terrasse couverte ouvre sur le jardin et la baie. Fauteuils de jardin, table basse et vue dégagée sur la mer : le coin parfait pour un verre en fin de journée, à l'ombre.": { it: "Al piano terra, una terrazza coperta si apre sul giardino e sulla baia. Sedie da giardino, tavolino e vista libera sul mare: l'angolo perfetto per un drink a fine giornata, all'ombra.", en: "On the ground floor, a covered terrace opens onto the garden and the bay. Garden chairs, a coffee table and an open sea view: the perfect spot for a drink in the shade at the end of the day." },
+        "Terrasse couverte": { it: "Terrazza coperta", en: "Covered terrace" },
+        "Accès jardin": { it: "Accesso al giardino", en: "Garden access" },
+        "Salon de jardin": { it: "Salotto da giardino", en: "Garden furniture" },
         "Le salon": { it: "Il soggiorno", en: "The living room" },
         "Lune de Miel · Le salon": { it: "Lune de Miel · Il soggiorno", en: "Lune de Miel · The living room" },
         "Le salon,": { it: "Il soggiorno,", en: "The living room," },
