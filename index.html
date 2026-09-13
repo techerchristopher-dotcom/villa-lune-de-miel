@@ -66,6 +66,14 @@
   .theme-ldm .room-nav a::after,.theme-ldm .room-more .n{color:var(--apt-accent)}
   .theme-ldm .room-more:hover{border-color:var(--apt-accent);background:var(--apt-soft)}
   .theme-ldm .lm-tile-tag:hover{background:rgba(201,80,47,.92)}
+  /* Sous-thème Clair de Lune : « La maison des retrouvailles » (nuit étoilée, emblème pleine lune) */
+  .theme-cdl{--apt-accent:#2C4A7A;--apt-accent-2:#D9B861;--apt-soft:rgba(44,74,122,.07);--apt-line:rgba(44,74,122,.24);--apt-tint:#f3f6fb}
+  .theme-cdl .lm-spec{background:var(--apt-soft);border-color:var(--apt-line)}
+  .theme-cdl .room-nav a{border-color:var(--apt-line)}
+  .theme-cdl .room-nav a:hover{background:var(--apt-soft);border-color:var(--apt-accent)}
+  .theme-cdl .room-nav a::after,.theme-cdl .room-more .n{color:var(--apt-accent)}
+  .theme-cdl .room-more:hover{border-color:var(--apt-accent);background:var(--apt-soft)}
+  .theme-cdl .lm-tile-tag:hover{background:rgba(44,74,122,.92)}
   .apt-emblem{width:.62em;height:.62em;color:var(--apt-accent);vertical-align:.02em;margin-left:.18em;flex:none}
   .apt-tagline{display:inline-flex;align-items:center;gap:8px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,1.6vw,21px);color:var(--apt-accent);margin:10px 0 0}
   .apt-watermark{position:absolute;right:clamp(-10px,2vw,40px);top:clamp(10px,3vw,40px);width:clamp(120px,16vw,210px);height:auto;color:var(--apt-accent);opacity:.07;pointer-events:none}
@@ -73,6 +81,8 @@
   #apt-badge.show{opacity:1;transform:translate(-50%,0)}
   #apt-badge strong{font-family:'Fraunces',serif;font-weight:500;font-size:15px;color:var(--apt-accent)}
   #apt-badge .apt-emblem{width:16px;height:16px;margin:0}
+  #apt-badge .em-cdl,#apt-badge.theme-cdl .em-ldm{display:none}
+  #apt-badge.theme-cdl .em-cdl{display:inline}
   @media (max-width:640px){#apt-badge{top:70px;font-size:12px;padding:7px 13px}}
   /* Section « La propriété, en commun » */
   .shared-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px)}
@@ -377,12 +387,12 @@
       </div>
     </a>
 
-    <a href="#clair-de-lune" data-reveal class="h-card" style="display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(22,33,31,.1);background:#fff;box-shadow:0 20px 50px -30px rgba(10,20,19,.3);transition:transform .3s ease,box-shadow .3s ease;color:inherit">
+    <a href="#clair-de-lune" data-reveal class="h-card theme-cdl" style="display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(22,33,31,.1);background:#fff;box-shadow:0 20px 50px -30px rgba(10,20,19,.3);transition:transform .3s ease,box-shadow .3s ease;color:inherit">
       <div style="position:relative;aspect-ratio:16/11;overflow:hidden"><img loading="lazy" decoding="async" src="images/ant-hero-1.webp" alt="Le logement Clair de Lune" style="width:100%;height:100%;object-fit:cover">
-        <span style="position:absolute;top:14px;left:14px;background:rgba(9,26,32,.58);color:#fff;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(3px)">2 chambres · jusqu'à 4</span></div>
+        <span style="position:absolute;top:14px;left:14px;background:rgba(9,26,32,.58);color:#fff;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(3px);background:rgba(44,74,122,.85)">2 chambres · jusqu'à 4</span></div>
       <div style="padding:22px 24px 24px">
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
-          <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);margin:0">Clair de Lune</h3>
+          <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);margin:0;display:inline-flex;align-items:center">Clair de Lune<svg class="apt-emblem" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="18" r="10.5" fill="currentColor"/><path d="M26 3.5l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1z" fill="var(--apt-accent-2)"/><path d="M27.5 15l.6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5-1.5-.6 1.5-.6z" fill="var(--apt-accent-2)"/></svg></h3>
           <div style="font-family:'Fraunces',serif;font-size:23px;color:#E8622B;white-space:nowrap">dès 85 €<span style="font-size:13px;color:rgba(22,33,31,.5);font-family:'Manrope',sans-serif"> / nuit</span></div>
         </div>
         <p style="font-size:15px;line-height:1.6;color:rgba(22,33,31,.66);margin:12px 0 16px">Le grand logement famille, vue mer panoramique. 2 chambres, grande terrasse, piscine à débordement partagée.</p>
@@ -689,14 +699,16 @@
 </section>
 
 <!-- ===== LOGEMENT 2 · ANTENEUS ===== -->
-<section id="clair-de-lune" aria-label="Clair de Lune" style="background:#fbfbf9;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07);border-bottom:1px solid rgba(22,33,31,.07)">
+<section id="clair-de-lune" class="theme-cdl" data-apt-name="Clair de Lune" aria-label="Clair de Lune" style="position:relative;background:var(--apt-tint);padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07);border-bottom:1px solid rgba(22,33,31,.07)">
+  <svg class="apt-watermark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="currentColor"/></svg>
   <div style="max-width:1240px;margin:0 auto">
     <div data-reveal style="margin-bottom:clamp(28px,4vw,44px)">
-      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Logement 2 · 2 chambres</div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Logement 2 · 2 chambres</div>
       <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:14px">
-        <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Clair de Lune</h2>
-        <div style="display:inline-flex;align-items:baseline;gap:9px;background:#16211F;color:#fff;padding:9px 18px;border-radius:999px"><span style="font-size:13px;color:rgba(255,255,255,.6)">dès</span><span style="font-family:'Fraunces',serif;font-size:26px;color:#F2C230">85 €</span><span style="font-size:13px;color:rgba(255,255,255,.6)">/ nuit</span></div>
+        <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0;display:inline-flex;align-items:center">Clair de Lune<svg class="apt-emblem" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="18" r="10.5" fill="currentColor"/><path d="M26 3.5l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1z" fill="var(--apt-accent-2)"/><path d="M27.5 15l.6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5-1.5-.6 1.5-.6z" fill="var(--apt-accent-2)"/></svg></h2>
+        <div style="display:inline-flex;align-items:baseline;gap:9px;background:#16211F;color:#fff;padding:9px 18px;border-radius:999px"><span style="font-size:13px;color:rgba(255,255,255,.6)">dès</span><span style="font-family:'Fraunces',serif;font-size:26px;color:var(--apt-accent-2)">85 €</span><span style="font-size:13px;color:rgba(255,255,255,.6)">/ nuit</span></div>
       </div>
+      <div class="apt-tagline">La maison des retrouvailles</div>
       <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:16px 0 0;max-width:60ch">Le grand logement de la propriété : 2 chambres, vue mer panoramique, immense terrasse face au coucher de soleil, cuisine tout équipée et accès à la piscine à débordement partagée. Jusqu'à 4 personnes.</p>
     </div>
 
@@ -715,7 +727,7 @@
     </div>
 
     <div data-reveal style="max-width:340px;margin:0 auto clamp(30px,4vw,40px)">
-      <div style="text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">En vidéo</div>
+      <div style="text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:14px">En vidéo</div>
       <div class="yt-facade" data-yt="F7XD1J9my54" role="button" tabindex="0" aria-label="Lire la vidéo" style="position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;cursor:pointer;background:#0d1a20;box-shadow:0 30px 70px -30px rgba(10,20,19,.5)">
         <img src="https://i.ytimg.com/vi/F7XD1J9my54/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/F7XD1J9my54/hqdefault.jpg'" alt="Aperçu de la vidéo d'Clair de Lune" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:.85">
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none"><div style="width:72px;height:72px;border-radius:50%;background:rgba(23,133,192,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 34px -8px rgba(0,0,0,.55)"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -727,6 +739,35 @@
       <a href="https://rentanoo.com/hebergement/9F1D55F9" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(242,194,48,.75);background:rgba(242,194,48,.12);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:8px;height:8px;border-radius:50%;background:#F2C230"></span>Rentanoo · <span style="color:#C9971A;font-weight:700">Meilleur tarif</span></a>
       <a href="https://www.airbnb.fr/rooms/1739253106573914156" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(22,33,31,.18);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:7px;height:7px;border-radius:50%;background:#E8622B"></span>Airbnb</a>
       <a href="https://www.booking.com/hotel/mg/villa-anteneus-andilana-nosy-be.fr.html" target="_blank" rel="noopener" class="h-chip4" style="display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid rgba(22,33,31,.18);color:#16211F;font-size:13.5px;font-weight:600"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
+    </div>
+    <!-- Navigation pièce par pièce (data-apt="clair-de-lune") -->
+    <nav class="room-nav" aria-label="Clair de Lune pièce par pièce">
+      <span class="room-nav-label">Pièce par pièce</span>
+      <a href="#clair-de-lune-terrasse">La terrasse</a>
+      <a href="#espaces-partages">Espaces partagés</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ===== LA TERRASSE (Clair de Lune) ===== -->
+<section id="clair-de-lune-terrasse" class="theme-cdl" data-apt-name="Clair de Lune" data-apt="clair-de-lune" data-room="terrasse" aria-label="La terrasse de Clair de Lune" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+  <div class="room-grid" style="max-width:1240px;margin:0 auto">
+    <div data-reveal>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--apt-accent);margin-bottom:12px">Clair de Lune · La terrasse</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Le grand balcon <span style="font-style:italic;font-weight:400">sur la mer</span>.</h2>
+      <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Le point fort de la résidence : une immense terrasse couverte qui court le long du logement, avec une vue mer panoramique. Un coin salon aux fauteuils bleus, une grande table pour les repas et l'apéro, et chaque soir, le coucher de soleil sur la baie.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
+        <span class="lm-spec">Terrasse couverte</span><span class="lm-spec">Vue mer panoramique</span><span class="lm-spec">Coin salon</span><span class="lm-spec">Grande table</span><span class="lm-spec">Barbecue</span><span class="lm-spec">Coucher de soleil</span>
+      </div>
+      <a href="#reservation" class="h-book" data-book="Clair de Lune" style="display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;box-shadow:0 16px 38px -16px rgba(10,20,19,.45);transition:background .25s ease,transform .25s ease">Réserver Clair de Lune</a>
+    </div>
+    <div class="room-photos-wrap">
+      <div class="room-photos">
+        <div data-reveal style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4"><img class="slot" loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0510.webp" width="1350" height="1800" alt="Clair de Lune — la grande terrasse couverte et son coin salon face à la mer"></div>
+        <div data-reveal style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;margin-top:clamp(28px,5vw,64px)"><img class="slot" loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0697.webp" width="1350" height="1800" alt="Clair de Lune — un cœur avec les mains au coucher de soleil"></div>
+      </div>
+      <button type="button" class="room-more"><span>Voir plus de photos</span> <span class="n">+20</span></button>
+      <div class="gallery-extra" hidden><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0516.webp" alt="Clair de Lune — discussion dans les fauteuils de la terrasse"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0513.webp" alt="Clair de Lune — pizza et boissons fraîches sur la terrasse face à la mer"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-9255.webp" alt="Clair de Lune — le fauteuil en rotin devant la baie vitrée"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-9256.webp" alt="Clair de Lune — le coin fauteuil, entre le salon et la terrasse"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0574.webp" alt="Clair de Lune — l'apéro autour de la grande table"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0576.webp" alt="Clair de Lune — un verre à table face à la mer"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0577.webp" alt="Clair de Lune — la grande table et la vue panoramique"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0578.webp" alt="Clair de Lune — à table sur la terrasse"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0575.webp" alt="Clair de Lune — trinquer face à l'océan"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-9167.webp" alt="Clair de Lune — la table extérieure face à la mer"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-9237.webp" alt="Clair de Lune — le barbecue de la terrasse"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0506.webp" alt="Clair de Lune — la vue sur la mer depuis la terrasse"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-9257.webp" alt="Clair de Lune — le soleil sur la baie depuis la terrasse"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0699.webp" alt="Clair de Lune — un cœur avec les mains face à la mer"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0700.webp" alt="Clair de Lune — le coucher de soleil depuis la rambarde"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0701.webp" alt="Clair de Lune — le soleil descend sur la baie"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0704.webp" alt="Clair de Lune — instant complice au crépuscule"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0705.webp" alt="Clair de Lune — le cœur au coucher de soleil"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0706.webp" alt="Clair de Lune — la baie au crépuscule"><img loading="lazy" decoding="async" src="images/clair-de-lune-terrasse-0707.webp" alt="Clair de Lune — les dernières lueurs sur la mer"></div>
     </div>
   </div>
 </section>
@@ -954,7 +995,7 @@
 
 </div>
 
-<div id="apt-badge" class="theme-ldm" aria-hidden="true"><svg class="apt-emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.2 13.9 26.3C6.6 19.7 1.8 15.4 1.8 10.1 1.8 5.8 5.2 2.4 9.5 2.4c2.4 0 4.8 1.1 6.5 2.9 1.7-1.8 4.1-2.9 6.5-2.9 4.3 0 7.7 3.4 7.7 7.7 0 5.3-4.8 9.6-12.1 16.2L16 28.2Z" fill="currentColor"/></svg><span>Vous visitez</span> <strong>Lune de Miel</strong></div>
+<div id="apt-badge" class="theme-ldm" aria-hidden="true"><svg class="apt-emblem em-ldm" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.2 13.9 26.3C6.6 19.7 1.8 15.4 1.8 10.1 1.8 5.8 5.2 2.4 9.5 2.4c2.4 0 4.8 1.1 6.5 2.9 1.7-1.8 4.1-2.9 6.5-2.9 4.3 0 7.7 3.4 7.7 7.7 0 5.3-4.8 9.6-12.1 16.2L16 28.2Z" fill="currentColor"/></svg><svg class="apt-emblem em-cdl" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="18" r="10.5" fill="currentColor"/><path d="M26 3.5l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1z" fill="var(--apt-accent-2)"/><path d="M27.5 15l.6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5-1.5-.6 1.5-.6z" fill="var(--apt-accent-2)"/></svg><span>Vous visitez</span> <strong>Lune de Miel</strong></div>
 <div id="lightbox" aria-hidden="true" role="dialog" aria-label="Photos"><span class="lb-close" aria-label="Fermer">&times;</span><button type="button" class="lb-nav lb-prev" aria-label="Photo précédente">&#8249;</button><img alt=""><button type="button" class="lb-nav lb-next" aria-label="Photo suivante">&#8250;</button><div class="lb-count"></div></div>
 
 <script>
@@ -963,14 +1004,20 @@
     (function () {
       var badge = document.getElementById('apt-badge');
       if (!badge) return;
-      var zones = [].slice.call(document.querySelectorAll('section.theme-ldm'));
+      var zones = [].slice.call(document.querySelectorAll('section[data-apt-name]'));
+      var label = badge.querySelector('strong');
       function update() {
-        var mid = window.innerHeight / 2, inside = false;
+        var mid = window.innerHeight / 2, inside = null;
         for (var k = 0; k < zones.length; k++) {
           var r = zones[k].getBoundingClientRect();
-          if (r.top <= mid && r.bottom >= mid) { inside = true; break; }
+          if (r.top <= mid && r.bottom >= mid) { inside = zones[k]; break; }
         }
-        badge.classList.toggle('show', inside && window.scrollY > 300);
+        if (inside) {
+          var cdl = inside.classList.contains('theme-cdl');
+          badge.classList.toggle('theme-cdl', cdl); badge.classList.toggle('theme-ldm', !cdl);
+          label.textContent = inside.getAttribute('data-apt-name');
+        }
+        badge.classList.toggle('show', !!inside && window.scrollY > 300);
       }
       window.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
@@ -1022,6 +1069,14 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "La maison des retrouvailles": { it: "La casa dei ritrovi", en: "The home for getting together" },
+        "Clair de Lune · La terrasse": { it: "Clair de Lune · La terrazza", en: "Clair de Lune · The terrace" },
+        "Le grand balcon": { it: "Il grande balcone", en: "The big balcony" },
+        "sur la mer": { it: "sul mare", en: "over the sea" },
+        "Le point fort de la résidence : une immense terrasse couverte qui court le long du logement, avec une vue mer panoramique. Un coin salon aux fauteuils bleus, une grande table pour les repas et l'apéro, et chaque soir, le coucher de soleil sur la baie.": { it: "Il punto forte della residenza: un'immensa terrazza coperta che corre lungo l'alloggio, con vista mare panoramica. Un angolo salotto con poltrone blu, un grande tavolo per i pasti e l'aperitivo e, ogni sera, il tramonto sulla baia.", en: "The highlight of the property: a huge covered terrace running along the unit, with a panoramic sea view. A lounge corner with blue armchairs, a large table for meals and drinks, and every evening, the sunset over the bay." },
+        "Coin salon": { it: "Angolo salotto", en: "Lounge corner" },
+        "Grande table": { it: "Grande tavolo", en: "Large table" },
+        "Coucher de soleil": { it: "Tramonto", en: "Sunset" },
         "Faites-vous livrer avec Taxi Food": { it: "Fatevi consegnare con Taxi Food", en: "Get it delivered with Taxi Food" },
         "Taxi Food · Livraison à Nosy Be": { it: "Taxi Food · Consegna a Nosy Be", en: "Taxi Food · Delivery in Nosy Be" },
         "La flemme de cuisiner ?": { it: "Pigri ai fornelli?", en: "Too lazy to cook?" },
