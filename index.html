@@ -380,6 +380,7 @@
     <a href="#lune-de-miel-chambre">La chambre</a>
     <a href="#lune-de-miel-terrasse">La terrasse</a>
     <a href="#teletravail">Espace télétravail</a>
+    <a href="#lune-de-miel-sdb">La salle de bain</a>
   </nav>
 </section>
 
@@ -455,6 +456,29 @@
       </div>
       <button type="button" class="room-more"><span>Voir plus de photos</span> <span class="n">+4</span></button>
       <div class="gallery-extra" hidden><img loading="lazy" decoding="async" src="images/teletravail-1.webp" alt="Lune de Miel — au bureau, face au lagon"><img loading="lazy" decoding="async" src="images/teletravail-2.webp" alt="Lune de Miel — l'espace télétravail dans la chambre"><img loading="lazy" decoding="async" src="images/lune-de-miel-teletravail-3.webp" alt="Lune de Miel — le bureau en bois face à la baie vitrée"><img loading="lazy" decoding="async" src="images/lune-de-miel-teletravail-4.webp" alt="Lune de Miel — le bureau, la clim et le tableau"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LA SALLE DE BAIN (Lune de Miel) ===== -->
+<section id="lune-de-miel-sdb" data-apt="lune-de-miel" data-room="sdb" aria-label="La salle de bain" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px);scroll-margin-top:76px;border-top:1px solid rgba(22,33,31,.07)">
+  <div class="room-grid is-reverse" style="max-width:1240px;margin:0 auto">
+    <div data-reveal>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:12px">Lune de Miel · La salle de bain</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.03;letter-spacing:-.01em;margin:0">Deux vasques, une <span style="font-style:italic;font-weight:400">douche à l'italienne</span>.</h2>
+      <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:18px 0 0;max-width:46ch">Une salle de bain spacieuse et lumineuse : double vasque sur un long meuble en bois, grands miroirs, douche à l'italienne et fenêtres qui laissent entrer la lumière du jour. Chacun son lavabo, même le matin.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 12px;margin:clamp(22px,3vw,30px) 0 clamp(24px,3.4vw,34px)">
+        <span class="lm-spec">Double vasque</span><span class="lm-spec">Douche à l'italienne</span><span class="lm-spec">Lumière naturelle</span><span class="lm-spec">Linge de toilette</span>
+      </div>
+      <a href="#reservation" class="h-book" data-book="Lune de Miel" style="display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;box-shadow:0 16px 38px -16px rgba(10,20,19,.45);transition:background .25s ease,transform .25s ease">Réserver Lune de Miel</a>
+    </div>
+    <div class="room-photos-wrap">
+      <div class="room-photos">
+        <div data-reveal style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-sdb-1.webp" width="1350" height="1800" alt="Lune de Miel — la salle de bain et sa double vasque"></div>
+        <div data-reveal style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;margin-top:clamp(28px,5vw,64px)"><img class="slot" loading="lazy" decoding="async" src="images/lune-de-miel-sdb-5.webp" width="1350" height="1800" alt="Lune de Miel — la vasque posée sur le plan carrelé, sous le miroir"></div>
+      </div>
+      <button type="button" class="room-more"><span>Voir plus de photos</span> <span class="n">+3</span></button>
+      <div class="gallery-extra" hidden><img loading="lazy" decoding="async" src="images/lune-de-miel-sdb-2.webp" alt="Lune de Miel — la salle de bain vue depuis l'entrée"><img loading="lazy" decoding="async" src="images/lune-de-miel-sdb-3.webp" alt="Lune de Miel — la douche à l'italienne"><img loading="lazy" decoding="async" src="images/lune-de-miel-sdb-4.webp" alt="Lune de Miel — la vasque et son grand miroir"></div>
     </div>
   </div>
 </section>
@@ -773,6 +797,14 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "La salle de bain": { it: "Il bagno", en: "The bathroom" },
+        "Lune de Miel · La salle de bain": { it: "Lune de Miel · Il bagno", en: "Lune de Miel · The bathroom" },
+        "Deux vasques, une": { it: "Due lavabi, una", en: "Two basins, a" },
+        "douche à l'italienne": { it: "doccia a filo pavimento", en: "walk-in shower" },
+        "Une salle de bain spacieuse et lumineuse : double vasque sur un long meuble en bois, grands miroirs, douche à l'italienne et fenêtres qui laissent entrer la lumière du jour. Chacun son lavabo, même le matin.": { it: "Un bagno spazioso e luminoso: doppio lavabo su un lungo mobile in legno, grandi specchi, doccia a filo pavimento e finestre che lasciano entrare la luce del giorno. Ognuno il suo lavabo, anche al mattino.", en: "A spacious, bright bathroom: double basin on a long wooden vanity, large mirrors, a walk-in shower and windows that let the daylight in. Everyone gets their own sink, even in the morning." },
+        "Double vasque": { it: "Doppio lavabo", en: "Double basin" },
+        "Douche à l'italienne": { it: "Doccia a filo pavimento", en: "Walk-in shower" },
+        "Linge de toilette": { it: "Asciugamani", en: "Towels provided" },
         "La terrasse": { it: "La terrazza", en: "The terrace" },
         "Lune de Miel · La terrasse": { it: "Lune de Miel · La terrazza", en: "Lune de Miel · The terrace" },
         "La mer à": { it: "Il mare a", en: "The sea," },
