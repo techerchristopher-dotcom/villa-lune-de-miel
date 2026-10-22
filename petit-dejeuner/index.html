@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le petit-déjeuner — Lune de Miel & Clair de Lune · Andilana</title>
+<meta name="description" content="Choisissez votre petit-déjeuner servi sur votre terrasse à Andilana : œufs, café ou thé, panier de fruits de saison.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#16211F">
+<meta property="og:title" content="Votre petit-déjeuner à Andilana">
+<meta property="og:description" content="Œufs, café ou thé, panier de fruits de saison — servi sur votre terrasse. Faites votre choix en 1 minute.">
+<meta property="og:image" content="https://villalunedemiel.rentanoo.com/petit-dejeuner/img/terrasse-cdl.webp">
+<link rel="icon" type="image/png" href="../images/favicon-v2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#16211F;--muted:#5b6865;--line:rgba(22,33,31,.12);--bg:#ffffff;--accent:#C9502F;--accent-2:#F29A7E;--soft:rgba(232,98,43,.08);--aline:rgba(201,80,47,.28);--tint:#fcf6f1;--ok:#2f7a4f}
+  body.cdl{--accent:#2C4A7A;--accent-2:#D9B861;--soft:rgba(44,74,122,.07);--aline:rgba(44,74,122,.26);--tint:#f3f6fb}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:96px}
+  img{display:block;max-width:100%}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;margin:0;letter-spacing:-.01em}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px}
+  button{font:inherit;color:inherit}
+
+  /* Haut de page */
+  .top{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 16px}
+  .top img{height:34px;width:auto}
+  .langs{display:flex;gap:4px;background:rgba(255,255,255,.88);border-radius:999px;padding:3px}
+  .langs button{border:0;background:none;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;color:var(--muted)}
+  .langs button.on{background:var(--ink);color:#fff}
+  .hero{position:relative;height:min(68vh,560px);min-height:400px;overflow:hidden;color:#fff}
+  .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,19,.25) 0%,rgba(10,20,19,0) 30%,rgba(10,20,19,.15) 55%,rgba(10,20,19,.78) 100%)}
+  .hero .wrap{position:absolute;left:0;right:0;bottom:30px;z-index:2}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.92}
+  .kicker svg{width:13px;height:13px;color:var(--accent-2)}
+  .hero h1{font-size:clamp(38px,8vw,64px);line-height:1.02;margin:10px 0 8px}
+  .hero h1 em{font-style:italic;color:var(--accent-2)}
+  .hero p{margin:0;font-size:16px;max-width:520px;opacity:.95}
+
+  /* Bandeau séjour */
+  .stay{margin:-22px auto 0;position:relative;z-index:3;background:#fff;border-radius:18px;box-shadow:0 18px 40px -22px rgba(10,20,19,.4);border:1px solid var(--line);padding:16px 18px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between}
+  .stay b{font-family:'Fraunces',serif;font-weight:500;font-size:19px}
+  .stay .price{display:flex;align-items:baseline;gap:6px;color:var(--accent)}
+  .stay .price strong{font-family:'Fraunces',serif;font-size:30px;font-weight:500}
+  .stay small{color:var(--muted);font-size:13px}
+
+  section{padding:42px 0 6px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+  h2{font-size:clamp(26px,5vw,36px);margin:6px 0 6px}
+  .lead{color:var(--muted);margin:0 0 20px;font-size:15px;line-height:1.55}
+
+  /* Carte */
+  .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .dish{background:var(--tint);border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .dish img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .dish div{padding:12px 14px 14px}
+  .dish h3{font-size:19px}
+  .dish p{margin:4px 0 0;font-size:13.5px;color:var(--muted);line-height:1.45}
+  .dish.wide{grid-column:span 3;display:grid;grid-template-columns:1.2fr 1fr}
+  .dish.wide img{height:100%;aspect-ratio:auto}
+  .dish.wide div{padding:22px;align-self:center}
+  .tag{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--ok);background:rgba(47,122,79,.1);padding:4px 10px;border-radius:999px}
+  .teas{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .teas span{font-size:12px;border:1px solid var(--aline);border-radius:999px;padding:3px 9px;color:var(--accent)}
+
+  .served{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .served figure{margin:0;position:relative;border-radius:16px;overflow:hidden}
+  .served img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .served figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);color:var(--ink);font-family:'Fraunces',serif;font-size:15px;padding:5px 12px;border-radius:999px}
+  /* Formulaire */
+  .card{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff;margin-bottom:14px}
+  .label{font-weight:700;font-size:14px;margin:0 0 10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
+  .chip.on{border-color:var(--accent);background:var(--soft);color:var(--accent)}
+  .chip:focus-visible,.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .morning{border:1.5px solid var(--aline);border-radius:18px;background:var(--tint);padding:16px;margin-bottom:14px}
+  .mhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+  .mhead h3{font-size:21px}
+  .mhead h3::first-letter,.recap b::first-letter{text-transform:uppercase}
+  .mhead select{font:inherit;font-size:14px;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:#fff}
+  .person{background:#fff;border-radius:14px;padding:14px;border:1px solid var(--line)}
+  .person+.person{margin-top:10px}
+  .person .who{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .opts.two{grid-template-columns:repeat(2,1fr)}
+  .opt{border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;cursor:pointer;text-align:left;padding:0;transition:.15s;position:relative}
+  .opt img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .opt span{display:block;padding:7px 9px;font-size:13px;font-weight:600;line-height:1.25}
+  .opt.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+  .opt.on::after{content:"✓";position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+  .sub{margin-top:12px}
+  .sub .chip{padding:7px 12px;font-size:13px}
+  .hint{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+  .fruit-note{display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ok);font-weight:600;margin-top:12px}
+  input,textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+  textarea{min-height:80px;resize:vertical}
+  .field+.field{margin-top:12px}
+  .field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+  .hp{position:absolute;left:-9999px}
+  .err{color:#b3261e;font-weight:600;font-size:14px;margin:10px 0 0;min-height:1em}
+
+  /* Barre du bas */
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0}
+  .bar .tot{font-size:13px;color:var(--muted)}
+  .bar .tot strong{display:block;font-family:'Fraunces',serif;font-size:24px;font-weight:500;color:var(--ink)}
+  .cta{border:0;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:14px 22px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .cta:disabled{opacity:.55;cursor:default}
+
+  /* Confirmation */
+  .done{display:none;padding:60px 0 30px;text-align:center}
+  .done .ic{width:64px;height:64px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin:0 auto 16px}
+  .done h2{margin-bottom:10px}
+  .recap{text-align:left;max-width:520px;margin:22px auto 0;border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:14.5px;line-height:1.6}
+  .recap b{font-family:'Fraunces',serif;font-weight:500;font-size:17px;display:inline-block}
+  body.sent main,body.sent .bar{display:none}
+  body.sent .done{display:block}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;padding:30px 16px 10px}
+  footer a{color:var(--muted)}
+
+  @media (max-width:640px){
+    .menu{grid-template-columns:1fr 1fr}
+    .dish.wide{grid-column:span 2;grid-template-columns:1fr}
+    .dish.wide img{aspect-ratio:16/10}
+    .dish.wide div{padding:14px}
+    .dish h3{font-size:17px}
+    .opts{gap:6px}
+    .opt span{font-size:12px;padding:6px 7px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <img src="../images/logo-inverse-v2.webp" alt="Lune de Miel & Clair de Lune">
+  <div class="langs" role="group" aria-label="Langue">
+    <button type="button" data-lang="fr" class="on">FR</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="it">IT</button>
+  </div>
+</div>
+
+<header class="hero">
+  <img src="img/hero.webp" alt="Petit-déjeuner servi dans la cuisine de Lune de Miel">
+  <div class="wrap">
+    <span class="kicker"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.5h2c.7-1.3 2.2-2.5 4.3-2.5 3.7 0 5.8 3.8 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg><span id="t-apt">Lune de Miel</span> · Andilana</span>
+    <h1 data-t="h1">Le petit-déjeuner<br><em>de la maison</em></h1>
+    <p data-t="sub">Préparé chaque matin dans votre cuisine, servi à table ou sur la terrasse face à la mer. Dites-nous ce qui vous fait plaisir.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="stay">
+      <div><b id="stay-dates">—</b><br><small id="stay-people">—</small></div>
+      <div class="price"><strong>20 €</strong><span data-t="permorning">par matin, pour vous deux</span></div>
+    </div>
+
+    <section>
+      <span class="eyebrow" data-t="ey1">La carte</span>
+      <h2 data-t="h2a">Un petit-déjeuner d'ici</h2>
+      <p class="lead" data-t="lead1">Des produits frais du marché, préparés le matin même.</p>
+      <div class="menu">
+        <article class="dish wide">
+          <img src="img/fruits.webp" alt="Panier de fruits de saison : mangues, ananas, papaye, bananes, fruits de la passion" loading="lazy">
+          <div><h3 data-t="fruits">Panier de fruits de saison</h3><p data-t="fruitsd">Mangue, ananas, papaye, banane, fruit de la passion… selon le marché du jour.</p><span class="tag" data-t="incl">Inclus chaque matin</span></div>
+        </article>
+        <article class="dish"><img src="img/oeufs-plat.webp" alt="Œufs sur le plat" loading="lazy"><div><h3 data-t="p_oeufs_plat">Œufs sur le plat</h3><p data-t="d1">Deux œufs, jaune coulant.</p></div></article>
+        <article class="dish"><img src="img/omelette-nature.webp" alt="Omelette nature" loading="lazy"><div><h3 data-t="p_omelette_nature">Omelette nature</h3><p data-t="d2">Moelleuse, simplement.</p></div></article>
+        <article class="dish"><img src="img/omelette-tomate.webp" alt="Omelette à la tomate" loading="lazy"><div><h3 data-t="p_omelette_tomate">Omelette à la tomate</h3><p data-t="d3">Tomates fraîches du marché.</p></div></article>
+        <article class="dish"><img src="img/cafe.webp" alt="Café" loading="lazy"><div><h3 data-t="b_cafe">Café</h3><p data-t="d4">Café de Madagascar, préparé à la cafetière.</p></div></article>
+        <article class="dish"><img src="img/the.webp" alt="Thé" loading="lazy"><div><h3 data-t="b_the">Thé</h3><p data-t="d5">Choisissez votre parfum :</p><div class="teas"><span data-t="t_vanille">Vanille</span><span data-t="t_citron">Citron</span><span data-t="t_menthe">Menthe</span><span data-t="t_cerise">Cerise</span><span data-t="t_nature">Nature</span></div></div></article>
+      </div>
+    </section>
+
+    <section>
+      <span class="eyebrow" data-t="ey3">Chez vous</span>
+      <h2 data-t="h2c">Sur la terrasse, face au lagon</h2>
+      <div class="served">
+        <figure><img src="img/terrasse-ldm.webp" alt="Petit-déjeuner sur la terrasse de Lune de Miel" loading="lazy"><figcaption>Lune de Miel</figcaption></figure>
+        <figure><img src="img/terrasse-cdl.webp" alt="Petit-déjeuner sur la terrasse de Clair de Lune" loading="lazy"><figcaption>Clair de Lune</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="commande">
+      <span class="eyebrow" data-t="ey2">Votre commande</span>
+      <h2 data-t="h2b">À vous de choisir</h2>
+      <p class="lead" data-t="lead2">Cochez vos matins, puis le choix de chacun. Le premier matin se recopie sur les suivants : changez seulement ce qui diffère.</p>
+
+      <div class="card" id="card-apt" hidden>
+        <p class="label" data-t="q_apt">Votre logement</p>
+        <div class="chips" id="apts"></div>
+      </div>
+      <div class="card" id="card-pers" hidden>
+        <p class="label" data-t="q_pers">Combien êtes-vous ?</p>
+        <div class="chips" id="pers"></div>
+      </div>
+      <div class="card">
+        <p class="label" data-t="q_days">Quels matins ?</p>
+        <div class="chips" id="days"></div>
+      </div>
+
+      <div id="mornings"></div>
+
+      <div class="card">
+        <div class="field"><label for="nom" data-t="f_nom">Votre nom</label><input id="nom" autocomplete="name" maxlength="120"></div>
+        <div class="field"><label for="wa" data-t="f_wa">Votre WhatsApp</label><input id="wa" type="tel" autocomplete="tel" inputmode="tel" placeholder="+262 6…" maxlength="40"></div>
+        <div class="field"><label for="msg" data-t="f_msg">Une envie, une allergie ? (facultatif)</label><textarea id="msg" maxlength="1000"></textarea></div>
+        <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="err" id="err" role="alert"></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="tot"><span id="tot-lbl">—</span><strong id="tot">0 €</strong></div>
+    <button class="cta" id="send" type="button" data-t="send">Enregistrer ma commande</button>
+  </div>
+</div>
+
+<div class="done wrap" id="done">
+  <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+  <h2 data-t="ok_h">C'est noté, merci !</h2>
+  <p class="lead" data-t="ok_p">Votre commande est enregistrée. Christopher vous confirme sur WhatsApp. Bon séjour à Andilana !</p>
+  <div class="recap" id="recap"></div>
+</div>
+
+<footer>Lune de Miel & Clair de Lune · Andilana, Nosy Be · <a href="https://villalunedemiel.rentanoo.com/">villalunedemiel.rentanoo.com</a></footer>
+
+<script>
+(function(){
+  var PRIX = 20;
+  var API = 'https://rentanoo.com/api/petit-dej';
+  var q = new URLSearchParams(location.search);
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /^http:\/\/localhost:\d+$/.test(q.get('api') || '')) API = q.get('api') + '/api/petit-dej';
+
+  var PLATS = ['oeufs_plat','omelette_nature','omelette_tomate'];
+  var IMG = {oeufs_plat:'oeufs-plat',omelette_nature:'omelette-nature',omelette_tomate:'omelette-tomate',cafe:'cafe',the:'the'};
+  var THES = ['vanille','citron','menthe','cerise','nature'];
+  var APTS = {'lune-de-miel':'Lune de Miel','clair-de-lune':'Clair de Lune'};
+
+  var T = {
+    en:{h1:'Breakfast<br><em>the house way</em>',sub:'Prepared every morning in your kitchen, served at the table or on the terrace facing the sea. Tell us what you fancy.',ey3:'At your place',h2c:'On the terrace, facing the lagoon',permorning:'per morning, for both of you',ey1:'The menu',h2a:'A local breakfast',lead1:'Fresh produce from the market, prepared that very morning.',fruits:'Basket of seasonal fruit',fruitsd:'Mango, pineapple, papaya, banana, passion fruit… depending on the market.',incl:'Included every morning',p_oeufs_plat:'Fried eggs',d1:'Two eggs, runny yolk.',p_omelette_nature:'Plain omelette',d2:'Soft and simple.',p_omelette_tomate:'Tomato omelette',d3:'Fresh market tomatoes.',b_cafe:'Coffee',d4:'Coffee from Madagascar, freshly brewed.',b_the:'Tea',d5:'Choose your flavour:',t_vanille:'Vanilla',t_citron:'Lemon',t_menthe:'Mint',t_cerise:'Cherry',t_nature:'Plain',ey2:'Your order',h2b:'Your choice',lead2:'Tick your mornings, then each person\'s choice. The first morning is copied to the next ones: only change what differs.',q_apt:'Your accommodation',q_pers:'How many of you?',q_days:'Which mornings?',f_nom:'Your name',f_wa:'Your WhatsApp',f_msg:'A craving, an allergy? (optional)',send:'Save my order',ok_h:'All set, thank you!',ok_p:'Your order is saved. Christopher will confirm on WhatsApp. Enjoy Andilana!',time:'Served at',person:'Person',eggs:'Eggs',drink:'Drink',flavour:'Tea flavour',fruitline:'+ basket of seasonal fruit',mornings:'mornings',morning:'morning',pers:'people',per1:'person',none:'Pick at least one morning',e_days:'Pick at least one morning.',e_name:'Enter your name and WhatsApp number.',e_net:'The order did not go through. Please try again in a moment.',sending:'Sending…',e_choice:'Complete each person\'s choice (eggs, drink, tea flavour).'},
+    it:{h1:'La colazione<br><em>della casa</em>',sub:'Preparata ogni mattina nella vostra cucina, servita a tavola o in terrazza davanti al mare. Diteci cosa vi fa piacere.',ey3:'Da voi',h2c:'In terrazza, davanti alla laguna',permorning:'a mattina, per voi due',ey1:'Il menù',h2a:'Una colazione locale',lead1:'Prodotti freschi del mercato, preparati la mattina stessa.',fruits:'Cesto di frutta di stagione',fruitsd:'Mango, ananas, papaya, banana, frutto della passione… secondo il mercato.',incl:'Incluso ogni mattina',p_oeufs_plat:'Uova all\'occhio di bue',d1:'Due uova, tuorlo morbido.',p_omelette_nature:'Omelette semplice',d2:'Soffice, semplicemente.',p_omelette_tomate:'Omelette al pomodoro',d3:'Pomodori freschi del mercato.',b_cafe:'Caffè',d4:'Caffè del Madagascar, appena fatto.',b_the:'Tè',d5:'Scegliete il gusto:',t_vanille:'Vaniglia',t_citron:'Limone',t_menthe:'Menta',t_cerise:'Ciliegia',t_nature:'Naturale',ey2:'Il vostro ordine',h2b:'A voi la scelta',lead2:'Spuntate le mattine, poi la scelta di ognuno. La prima mattina viene copiata sulle successive: cambiate solo ciò che è diverso.',q_apt:'Il vostro alloggio',q_pers:'Quanti siete?',q_days:'Quali mattine?',f_nom:'Il vostro nome',f_wa:'Il vostro WhatsApp',f_msg:'Un desiderio, un\'allergia? (facoltativo)',send:'Registra il mio ordine',ok_h:'Fatto, grazie!',ok_p:'Il vostro ordine è registrato. Christopher vi conferma su WhatsApp. Buon soggiorno ad Andilana!',time:'Servito alle',person:'Persona',eggs:'Uova',drink:'Bevanda',flavour:'Gusto del tè',fruitline:'+ cesto di frutta di stagione',mornings:'mattine',morning:'mattina',pers:'persone',per1:'persona',none:'Scegliete almeno una mattina',e_days:'Scegliete almeno una mattina.',e_name:'Indicate nome e numero WhatsApp.',e_net:'L\'ordine non è partito. Riprovate tra un momento.',sending:'Invio…',e_choice:'Completate la scelta di ognuno (uova, bevanda, gusto del tè).'}
+  };
+  var FR = {time:'Servi à',person:'Personne',eggs:'Œufs',drink:'Boisson',flavour:'Parfum du thé',fruitline:'+ panier de fruits de saison',mornings:'matins',morning:'matin',pers:'personnes',per1:'personne',none:'Choisissez au moins un matin',e_days:'Choisissez au moins un matin.',e_name:'Indiquez votre nom et votre numéro WhatsApp.',e_net:'La commande n\'est pas partie. Réessayez dans un instant.',sending:'Envoi…',e_choice:'Complétez le choix de chacun (œufs, boisson, parfum du thé).'};
+  document.querySelectorAll('[data-t]').forEach(function(el){ FR[el.dataset.t] = el.innerHTML; });
+  var lang = 'fr';
+  try { var s = localStorage.getItem('pdj-lang'); if (T[s]) lang = s; } catch(e){}
+  if (q.get('lang') && (T[q.get('lang')] || q.get('lang') === 'fr')) lang = q.get('lang');
+  function tr(k){ return (lang !== 'fr' && T[lang][k]) || FR[k] || k; }
+  var LOC = {fr:'fr-FR',en:'en-GB',it:'it-IT'};
+
+  // Séjour (lien envoyé au client) : ?l=lune-de-miel&du=2026-10-25&au=2026-10-26&p=2
+  var ymd = function(d){ return d.toISOString().slice(0,10); };
+  var today = new Intl.DateTimeFormat('en-CA',{timeZone:'Indian/Antananarivo'}).format(new Date());
+  var apt = APTS[q.get('l')] ? q.get('l') : null;
+  var persFixed = /^[1-4]$/.test(q.get('p') || '') ? Number(q.get('p')) : null;
+  var du = /^\d{4}-\d{2}-\d{2}$/.test(q.get('du') || '') ? q.get('du') : null;
+  var au = /^\d{4}-\d{2}-\d{2}$/.test(q.get('au') || '') ? q.get('au') : null;
+  var dates = [];
+  var d0 = new Date((du && du > today ? du : today) + 'T12:00:00Z');
+  if (!du || du <= today) d0.setUTCDate(d0.getUTCDate() + 1);
+  var dEnd = au ? new Date(au + 'T12:00:00Z') : new Date(d0.getTime() + 6 * 864e5);
+  for (var d = new Date(d0); d <= dEnd && dates.length < 21; d.setUTCDate(d.getUTCDate() + 1)) dates.push(ymd(d));
+
+  var state = { apt: apt, pers: persFixed || 2, sel: dates.slice(0, au ? dates.length : 0), m: {} };
+  // Le premier matin sert de modèle : les matins non modifiés le suivent.
+  function blank(){ return { heure: '08:00', choix: [], touched: false }; }
+  function ensure(date){
+    if (!state.m[date]) state.m[date] = blank();
+    var c = state.m[date].choix;
+    while (c.length < state.pers) c.push({ plat: '', boisson: '', the: '' });
+    c.length = state.pers;
+    return state.m[date];
+  }
+  function sync(){
+    var first = state.sel[0]; if (!first) return;
+    var src = ensure(first);
+    state.sel.slice(1).forEach(function(dt){
+      var m = ensure(dt);
+      if (!m.touched) { m.heure = src.heure; m.choix = src.choix.map(function(c){ return { plat: c.plat, boisson: c.boisson, the: c.the }; }); }
+    });
+  }
+
+  var fmtDay = function(dt, o){ return new Intl.DateTimeFormat(LOC[lang], Object.assign({ timeZone: 'UTC' }, o)).format(new Date(dt + 'T12:00:00Z')); };
+
+  function chip(label, on, fn){
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'chip' + (on ? ' on' : ''); b.textContent = label;
+    b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.onclick = fn; return b;
+  }
+  function opt(key, label, on, fn){
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'opt' + (on ? ' on' : '');
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.innerHTML = '<img src="img/' + IMG[key] + '.webp" alt="" loading="lazy"><span></span>';
+    b.querySelector('span').textContent = label; b.onclick = fn; return b;
+  }
+
+  function render(){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-t]').forEach(function(el){ el.innerHTML = tr(el.dataset.t); });
+    document.querySelectorAll('.langs button').forEach(function(b){ b.classList.toggle('on', b.dataset.lang === lang); });
+    document.body.classList.toggle('cdl', state.apt === 'clair-de-lune');
+    document.getElementById('t-apt').textContent = state.apt ? APTS[state.apt] : 'Lune de Miel & Clair de Lune';
+
+    // Séjour
+    var sd = document.getElementById('stay-dates');
+    sd.textContent = du && au ? (du === au ? fmtDay(du, { weekday: 'long', day: 'numeric', month: 'long' }) : fmtDay(du, { weekday: 'short', day: 'numeric' }) + ' → ' + fmtDay(au, { weekday: 'short', day: 'numeric', month: 'long' })) : (state.apt ? APTS[state.apt] : 'Andilana');
+    document.getElementById('stay-people').textContent = (state.apt ? APTS[state.apt] + ' · ' : '') + state.pers + ' ' + (state.pers > 1 ? tr('pers') : tr('per1'));
+
+    // Logement / personnes (masqués si fixés par le lien)
+    var ca = document.getElementById('card-apt'); ca.hidden = !!apt;
+    var aw = document.getElementById('apts'); aw.innerHTML = '';
+    Object.keys(APTS).forEach(function(k){ aw.appendChild(chip(APTS[k], state.apt === k, function(){ state.apt = k; render(); })); });
+    var cp = document.getElementById('card-pers'); cp.hidden = !!persFixed;
+    var pw = document.getElementById('pers'); pw.innerHTML = '';
+    [1,2,3,4].forEach(function(n){ pw.appendChild(chip(String(n), state.pers === n, function(){ state.pers = n; sync(); render(); })); });
+
+    // Matins
+    var dw = document.getElementById('days'); dw.innerHTML = '';
+    dates.forEach(function(dt){
+      var on = state.sel.indexOf(dt) >= 0;
+      dw.appendChild(chip(fmtDay(dt, { weekday: 'short', day: 'numeric', month: 'short' }), on, function(){
+        if (on) state.sel = state.sel.filter(function(x){ return x !== dt; });
+        else { state.sel.push(dt); state.sel.sort(); }
+        sync(); render();
+      }));
+    });
+
+    sync();
+    var mw = document.getElementById('mornings'); mw.innerHTML = '';
+    state.sel.forEach(function(dt, idx){
+      var m = ensure(dt);
+      var box = document.createElement('div'); box.className = 'morning';
+      var head = document.createElement('div'); head.className = 'mhead';
+      var h = document.createElement('h3'); h.textContent = fmtDay(dt, { weekday: 'long', day: 'numeric', month: 'long' });
+      var sl = document.createElement('label'); sl.style.cssText = 'font-size:13px;font-weight:600;display:flex;gap:8px;align-items:center';
+      sl.appendChild(document.createTextNode(tr('time')));
+      var sel = document.createElement('select');
+      ['07:00','07:30','08:00','08:30','09:00','09:30','10:00','10:30'].forEach(function(hh){ var o = document.createElement('option'); o.value = hh; o.textContent = hh.replace(':', ' h '); if (hh === m.heure) o.selected = true; sel.appendChild(o); });
+      sel.onchange = function(){ m.heure = sel.value; if (idx) m.touched = true; render(); };
+      sl.appendChild(sel); head.appendChild(h); head.appendChild(sl); box.appendChild(head);
+
+      m.choix.forEach(function(c, i){
+        var p = document.createElement('div'); p.className = 'person';
+        p.innerHTML = '<div class="who"></div>'; p.querySelector('.who').textContent = tr('person') + ' ' + (i + 1);
+        var set = function(k, v){ return function(){ c[k] = v; if (idx) m.touched = true; render(); }; };
+        var g1 = document.createElement('div'); g1.className = 'opts';
+        PLATS.forEach(function(k){ g1.appendChild(opt(k, tr('p_' + k), c.plat === k, set('plat', k))); });
+        var g2 = document.createElement('div'); g2.className = 'opts two'; g2.style.marginTop = '8px';
+        ['cafe','the'].forEach(function(k){ g2.appendChild(opt(k, tr('b_' + k), c.boisson === k, set('boisson', k))); });
+        p.appendChild(g1); p.appendChild(g2);
+        if (c.boisson === 'the') {
+          var sub = document.createElement('div'); sub.className = 'sub';
+          var lb = document.createElement('p'); lb.className = 'label'; lb.style.margin = '0 0 8px'; lb.textContent = tr('flavour'); sub.appendChild(lb);
+          var ch = document.createElement('div'); ch.className = 'chips';
+          THES.forEach(function(k){ ch.appendChild(chip(tr('t_' + k), c.the === k, set('the', k))); });
+          sub.appendChild(ch); p.appendChild(sub);
+        }
+        box.appendChild(p);
+      });
+      var fn = document.createElement('div'); fn.className = 'fruit-note'; fn.textContent = '🍍 ' + tr('fruitline'); box.appendChild(fn);
+      mw.appendChild(box);
+    });
+
+    var n = state.sel.length;
+    document.getElementById('tot-lbl').textContent = n ? n + ' ' + (n > 1 ? tr('mornings') : tr('morning')) + ' × ' + PRIX + ' €' : tr('none');
+    document.getElementById('tot').textContent = (n * PRIX) + ' €';
+  }
+
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.onclick = function(){ lang = b.dataset.lang; try { localStorage.setItem('pdj-lang', lang); } catch(e){} render(); };
+  });
+
+  var err = document.getElementById('err');
+  var btn = document.getElementById('send');
+  btn.onclick = function(){
+    err.textContent = '';
+    var nom = document.getElementById('nom').value.trim();
+    var wa = document.getElementById('wa').value.trim();
+    var fail = function(m, el){ err.textContent = m; (el || err).scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+    if (!state.apt) return fail(tr('e_days').replace(/.*/, tr('q_apt')), document.getElementById('card-apt'));
+    if (!state.sel.length) return fail(tr('e_days'), document.getElementById('days'));
+    var bad = state.sel.some(function(dt){ return state.m[dt].choix.some(function(c){ return !c.plat || !c.boisson || (c.boisson === 'the' && !c.the); }); });
+    if (bad) return fail(tr('e_choice'), document.getElementById('mornings'));
+    if (!nom || wa.replace(/\D/g, '').length < 8) return fail(tr('e_name'), document.getElementById('nom'));
+    var payload = {
+      logement: state.apt, personnes: state.pers, nom: nom, whatsapp: wa,
+      message: document.getElementById('msg').value.trim(), website: document.getElementById('website').value,
+      matins: state.sel.map(function(dt){ var m = state.m[dt]; return { date: dt, heure: m.heure, choix: m.choix.map(function(c){ return c.boisson === 'the' ? { plat: c.plat, boisson: c.boisson, the: c.the } : { plat: c.plat, boisson: c.boisson }; }) }; })
+    };
+    btn.disabled = true; btn.textContent = tr('sending');
+    fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function(r){ return r.json().catch(function(){ return { ok: false }; }); })
+      .then(function(j){
+        if (!j.ok) throw new Error(j.error || tr('e_net'));
+        var html = payload.matins.map(function(m){
+          return '<b>' + fmtDay(m.date, { weekday: 'long', day: 'numeric', month: 'long' }) + '</b> · ' + m.heure.replace(':', ' h ') + '<br>' +
+            m.choix.map(function(c, i){ return tr('person') + ' ' + (i + 1) + ' : ' + tr('p_' + c.plat) + ', ' + (c.boisson === 'the' ? tr('b_the') + ' ' + tr('t_' + c.the).toLowerCase() : tr('b_cafe')); }).join('<br>') +
+            '<br><span style="color:var(--ok)">' + tr('fruitline') + '</span>';
+        }).join('<hr style="border:0;border-top:1px solid var(--line);margin:12px 0">') +
+          '<hr style="border:0;border-top:1px solid var(--line);margin:12px 0"><b>Total : ' + (payload.matins.length * PRIX) + ' €</b>';
+        document.getElementById('recap').innerHTML = html;
+        document.body.classList.add('sent'); window.scrollTo({ top: 0, behavior: 'instant' });
+      })
+      .catch(function(e){ btn.disabled = false; btn.textContent = tr('send'); fail(e && e.message && e.message !== 'Failed to fetch' ? e.message : tr('e_net')); });
+  };
+
+  render();
+})();
+</script>
+</body>
+</html>
