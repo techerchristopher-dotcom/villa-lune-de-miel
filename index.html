@@ -97,6 +97,17 @@
   .shared-body p{font-size:15px;line-height:1.6;color:rgba(22,33,31,.7);margin:0}
   .shared-count{position:absolute;right:12px;bottom:12px;background:rgba(255,255,255,.9);color:#16211F;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;pointer-events:none}
   .shared-media .slot{cursor:zoom-in}
+  .svc-card{display:grid;grid-template-columns:1.15fr 1fr;background:#fcf6f1;border:1px solid rgba(201,80,47,.22);border-radius:16px;overflow:hidden;box-shadow:0 24px 60px -40px rgba(10,20,19,.35)}
+  .svc-media{display:grid;grid-template-columns:1.4fr 1fr;gap:4px;min-height:340px}
+  .svc-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .svc-body{padding:clamp(24px,3.4vw,44px);align-self:center}
+  .svc-flag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#C9502F;background:rgba(232,98,43,.1);padding:6px 12px;border-radius:999px}
+  .svc-body h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(26px,2.6vw,36px);line-height:1.1;margin:14px 0 12px}
+  .svc-body p{font-size:15.5px;line-height:1.62;color:rgba(22,33,31,.74);margin:0 0 10px}
+  .svc-cta{display:inline-flex;align-items:center;margin-top:12px;padding:14px 24px;border-radius:999px;background:#C9502F;color:#fff;font-weight:600;font-size:15.5px;transition:background .25s ease}
+  .svc-cta:hover{background:#a8401f;color:#fff}
+  .svc-more{text-align:center;font-size:15px;color:rgba(22,33,31,.7);margin:22px 0 0}
+  @media (max-width:900px){.svc-card{grid-template-columns:1fr}.svc-media{min-height:0;height:260px}}
   .shared-link{display:inline-flex;margin-top:14px;font-weight:600;font-size:14.5px;color:#1785C0}
   .shared-link::after{content:' \2192'}
   /* Taxi Food */
@@ -435,6 +446,31 @@
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES SUR MESURE ===== -->
+<section id="services" aria-label="Services sur mesure" style="background:#ffffff;padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px) clamp(16px,2vw,24px);scroll-margin-top:76px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:720px;margin:0 auto clamp(30px,4vw,48px)">
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">Pendant votre séjour</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,54px);line-height:1.06;letter-spacing:-.01em;margin:0 0 14px">Services <span style="font-style:italic;font-weight:400">sur mesure</span>.</h2>
+      <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.72);margin:0">Pour profiter sans penser à rien, on prépare pour vous ce qui rend le séjour plus doux.</p>
+    </div>
+    <article data-reveal class="svc-card">
+      <a class="svc-media" href="petit-dejeuner/" aria-label="Composer mon petit-déjeuner">
+        <img loading="lazy" decoding="async" src="petit-dejeuner/img/terrasse-cdl.webp" alt="Petit-déjeuner servi sur la terrasse de Clair de Lune, face à la mer">
+        <img loading="lazy" decoding="async" src="petit-dejeuner/img/oeufs-plat.webp" alt="Œufs au plat préparés dans la cuisine de Lune de Miel">
+      </a>
+      <div class="svc-body">
+        <span class="svc-flag">10 € par personne et par matin</span>
+        <h3>Le petit-déjeuner de la maison</h3>
+        <p>Préparé chaque matin dans votre cuisine et servi à table ou sur la terrasse : œufs sur le plat ou omelette, café ou thé (vanille, citron, menthe…) et un panier de fruits de saison.</p>
+        <p>Choisissez vos matins et le menu de chacun en une minute, on s'occupe du reste.</p>
+        <a class="svc-cta" href="petit-dejeuner/">Composer mon petit-déjeuner</a>
+      </div>
+    </article>
+    <p data-reveal class="svc-more">Une autre envie, un transfert, une excursion ? <a href="#contact">Écrivez à l'hôte</a></p>
   </div>
 </section>
 
@@ -1069,6 +1105,17 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "Pendant votre séjour": { it: "Durante il soggiorno", en: "During your stay" },
+        "Services": { it: "Servizi", en: "Tailor-made" },
+        "sur mesure": { it: "su misura", en: "services" },
+        "Pour profiter sans penser à rien, on prépare pour vous ce qui rend le séjour plus doux.": { it: "Per godervi tutto senza pensieri, prepariamo per voi ciò che rende il soggiorno più dolce.", en: "So you can relax without a care, we take care of the little things that make a stay sweeter." },
+        "10 € par personne et par matin": { it: "10 € a persona e a mattina", en: "€10 per person per morning" },
+        "Le petit-déjeuner de la maison": { it: "La colazione della casa", en: "Breakfast, the house way" },
+        "Préparé chaque matin dans votre cuisine et servi à table ou sur la terrasse : œufs sur le plat ou omelette, café ou thé (vanille, citron, menthe…) et un panier de fruits de saison.": { it: "Preparata ogni mattina nella vostra cucina e servita a tavola o in terrazza: uova all'occhio di bue o omelette, caffè o tè (vaniglia, limone, menta…) e un cesto di frutta di stagione.", en: "Prepared every morning in your kitchen and served at the table or on the terrace: fried eggs or an omelette, coffee or tea (vanilla, lemon, mint…) and a basket of seasonal fruit." },
+        "Choisissez vos matins et le menu de chacun en une minute, on s'occupe du reste.": { it: "Scegliete le mattine e il menù di ognuno in un minuto, al resto pensiamo noi.", en: "Pick your mornings and everyone's menu in a minute, we take care of the rest." },
+        "Composer mon petit-déjeuner": { it: "Componi la mia colazione", en: "Build my breakfast" },
+        "Écrivez à l'hôte": { it: "Scrivete all'host", en: "Message the host" },
+        "Une autre envie, un transfert, une excursion ?": { it: "Un altro desiderio, un transfer, un'escursione?", en: "Something else, a transfer, an excursion?" },
         "La maison des retrouvailles": { it: "La casa dei ritrovi", en: "The home for getting together" },
         "Clair de Lune · La terrasse": { it: "Clair de Lune · La terrazza", en: "Clair de Lune · The terrace" },
         "Le grand balcon": { it: "Il grande balcone", en: "The big balcony" },
