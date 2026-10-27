@@ -1611,5 +1611,17 @@
 })();
 </script>
 
+<!-- logos officiels des plateformes -->
+<style>.pl-logo{height:20px;width:auto;display:inline-block;vertical-align:middle;background:#fff;padding:3px 7px;border-radius:6px;box-sizing:content-box}.pl-logo.rt{height:22px}</style>
+<script>(function(){var L={airbnb:["images/logo-airbnb.svg","Airbnb",""],booking:["images/logo-booking.svg","Booking.com",""],rentanoo:["images/rentanoo-logo.webp","Rentanoo","rt"]};
+function key(a){var h=a.getAttribute("href")||"",t=(a.textContent||"").trim();
+if(/airbnb\.[a-z.]+\/rooms/.test(h)||/^Airbnb\b/.test(t))return"airbnb";
+if(/booking\.com/.test(h)||/^Booking(\.com)?\b/.test(t))return"booking";
+if(/rentanoo\.com\/hebergement/.test(h)&&/^Rentanoo/.test(t))return"rentanoo";}
+function run(){document.querySelectorAll("a").forEach(function(a){if(a.dataset.pl)return;var k=key(a);if(!k)return;
+Array.prototype.slice.call(a.childNodes).forEach(function(n){if(n.nodeType!==3)return;var re=/(Booking\.com|Booking|Airbnb|Rentanoo)/;if(!re.test(n.nodeValue))return;
+var parts=n.nodeValue.split(re),f=document.createDocumentFragment();parts.forEach(function(p){if(re.test(p)&&p.length>0){var i=document.createElement("img");i.src=L[k][0];i.alt=L[k][1];i.className="pl-logo "+L[k][2];f.appendChild(i)}else if(p)f.appendChild(document.createTextNode(p))});a.replaceChild(f,n)});
+a.dataset.pl="1"})}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){setTimeout(run,0)});else setTimeout(run,0)})();</script>
 </body>
 </html>
