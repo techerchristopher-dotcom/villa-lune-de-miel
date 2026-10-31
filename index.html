@@ -243,6 +243,18 @@
     #lang-switch{gap:2px;padding:4px 9px}
     .lang-btn{padding:3px 2px 2px}
   }
+  /* Très petits téléphones (≤ 380 px, ex. iPhone SE / Galaxy A) : rien ne doit dépasser */
+  @media (max-width:380px){
+    #site-header{padding-left:12px;padding-right:12px;gap:8px}
+    #site-header > div{gap:8px!important}
+    #nav-cta{padding:8px 11px;font-size:12px}
+    #lang-switch{padding:4px 7px}
+    div:has(> .h-chip2){flex-wrap:wrap}
+    .h-chip2{flex:1 1 100%!important}
+    .svc-media{height:220px}
+    .svc-body{padding:20px 16px}
+    .svc-cta{width:100%;justify-content:center;text-align:center}
+  }
 </style>
 </head>
 <body>
@@ -463,7 +475,7 @@
         <img loading="lazy" decoding="async" src="petit-dejeuner/img/oeufs-plat.webp" alt="Œufs au plat préparés dans la cuisine de Lune de Miel">
       </a>
       <div class="svc-body">
-        <span class="svc-flag">10 € par personne et par matin</span>
+        <span class="svc-flag">20 € par personne et par matin</span>
         <h3>Le petit-déjeuner de la maison</h3>
         <p>Préparé chaque matin dans votre logement par notre gouvernante, qui passe une heure avant, dresse toute la table, couvre les plats et laisse le café au chaud (pas de service à table, on repasse ensuite débarrasser) : œufs sur le plat ou omelette, pain du jour ou pain de mie grillé avec beurre et confiture, café, thé (vanille, citron, menthe…) et jus de fruits frais de saison, avec un panier de fruits.</p>
         <p>Choisissez vos matins et le menu de chacun en une minute, on s'occupe du reste.</p>
@@ -1109,7 +1121,7 @@
         "Services": { it: "Servizi", en: "Tailor-made" },
         "sur mesure": { it: "su misura", en: "services" },
         "Pour profiter sans penser à rien, on prépare pour vous ce qui rend le séjour plus doux.": { it: "Per godervi tutto senza pensieri, prepariamo per voi ciò che rende il soggiorno più dolce.", en: "So you can relax without a care, we take care of the little things that make a stay sweeter." },
-        "10 € par personne et par matin": { it: "10 € a persona e a mattina", en: "€10 per person per morning" },
+        "20 € par personne et par matin": { it: "20 € a persona e a mattina", en: "€20 per person per morning" },
         "Le petit-déjeuner de la maison": { it: "La colazione della casa", en: "Breakfast, the house way" },
         "Préparé chaque matin dans votre logement par notre gouvernante, qui passe une heure avant, dresse toute la table, couvre les plats et laisse le café au chaud (pas de service à table, on repasse ensuite débarrasser) : œufs sur le plat ou omelette, pain du jour ou pain de mie grillé avec beurre et confiture, café, thé (vanille, citron, menthe…) et jus de fruits frais de saison, avec un panier de fruits.": { it: "Preparata ogni mattina nel vostro alloggio dalla nostra governante, che passa un'ora prima, apparecchia tutta la tavola, copre i piatti e lascia il caffè in caldo (nessun servizio al tavolo, ripassiamo poi a sparecchiare): uova all'occhio di bue o omelette, pane del giorno o pan carré tostato con burro e marmellata, caffè, tè (vaniglia, limone, menta…) e succo di frutta fresca di stagione, con un cesto di frutta.", en: "Prepared every morning in your accommodation by our housekeeper, who comes an hour before, sets the whole table, covers the dishes and keeps the coffee warm (no table service, we come back afterwards to clear): fried eggs or an omelette, fresh bread or toast with butter and jam, coffee, tea (vanilla, lemon, mint…) and fresh seasonal fruit juice, with a basket of fruit." },
         "Choisissez vos matins et le menu de chacun en une minute, on s'occupe du reste.": { it: "Scegliete le mattine e il menù di ognuno in un minuto, al resto pensiamo noi.", en: "Pick your mornings and everyone's menu in a minute, we take care of the rest." },
