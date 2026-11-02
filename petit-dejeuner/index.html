@@ -281,8 +281,10 @@
   };
   var FR = {painhint:'Avec beurre, confiture, ou les deux.',b_beurre:'Beurre',b_confiture:'Confiture',confq:'Votre confiture idéale (facultatif)',confph:'Abricot, fraise, framboise…',confnote:'Selon les disponibilités en magasin : on fait notre possible.',drinkhint:'Une, deux ou les trois, même prix.',time:'Prêt pour',person:'Personne',eggs:'Œufs',drink:'Boisson',flavour:'Parfum du thé',fruitline:'+ panier de fruits de saison',mornings:'matins',morning:'matin',pers:'personnes',per1:'personne',none:'Choisissez au moins un matin',e_days:'Choisissez au moins un matin.',e_name:'Indiquez votre nom et votre numéro WhatsApp.',e_net:'La commande n\'est pas partie. Réessayez dans un instant.',sending:'Envoi…',e_choice:'Complétez le choix de chacun (œufs, pain, beurre et/ou confiture, au moins une boisson, parfum du thé).',wa_hint:'Notre serveur ne répond pas pour le moment. Envoyez votre commande à l\'hôte sur WhatsApp, elle est déjà rédigée :',wa_send:'Envoyer sur WhatsApp'};
   document.querySelectorAll('[data-t]').forEach(function(el){ FR[el.dataset.t] = el.innerHTML; });
-  var lang = 'fr';
-  try { var s = localStorage.getItem('pdj-lang'); if (T[s]) lang = s; } catch(e){}
+  // Langue du téléphone par défaut (comme l'accueil du site) ; le choix du visiteur et ?lang= restent prioritaires.
+  var lang = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+  if (!T[lang]) lang = 'fr';
+  try { var s = localStorage.getItem('pdj-lang'); if (T[s] || s === 'fr') lang = s; } catch(e){}
   if (q.get('lang') && (T[q.get('lang')] || q.get('lang') === 'fr')) lang = q.get('lang');
   function tr(k){ return (lang !== 'fr' && T[lang][k]) || FR[k] || k; }
   var LOC = {fr:'fr-FR',en:'en-GB',it:'it-IT'};
@@ -332,8 +334,10 @@
     b.querySelector('span').textContent = label; b.onclick = fn; return b;
   }
 
+  var TITRES = {fr:document.title,en:'Breakfast — Lune de Miel & Clair de Lune · Andilana',it:'La colazione — Lune de Miel & Clair de Lune · Andilana'};
   function render(){
     document.documentElement.lang = lang;
+    document.title = TITRES[lang];
     document.querySelectorAll('[data-t]').forEach(function(el){ el.innerHTML = tr(el.dataset.t); });
     document.querySelectorAll('.langs button').forEach(function(b){ b.classList.toggle('on', b.dataset.lang === lang); });
     document.body.classList.toggle('cdl', state.apt === 'clair-de-lune');
